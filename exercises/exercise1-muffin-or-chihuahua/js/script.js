@@ -8,10 +8,12 @@ find the dogs among the foods!
 */
 
 const NUM_muffin_IMAGES = 6;
-const NUM_muffinS = 60;
+const NUM_muffinS = 40;
 
 const NUM_chihuahua_IMAGES = 2;
-const NUM_chihuahuaS = 10;
+const NUM_chihuahuaS = 3;
+
+let num_chihuahuasLeft;
 
 let muffinImages = [];
 let muffins = [];
@@ -51,6 +53,8 @@ function setup() {
     let chihuahua = new Chihuahua(x, y, chihuahuaImage);
     chihuahuas.push(chihuahua);
   }
+
+  num_chihuahuasLeft = NUM_chihuahuaS;
 }
 
 
@@ -63,5 +67,33 @@ function draw() {
   }
   for(let i = 0; i < chihuahuas.length; i++){
     chihuahuas[i].update();
+  }
+
+  displayText();
+  checkifWin();
+
+}
+
+function mousePressed(){
+  for(let i = 0; i < chihuahuas.length; i++){
+    chihuahuas[i].mousePressed();
+  }
+}
+
+function displayText(){
+  push();
+  fill(255,0,0);
+  textSize(32);
+  text(`${num_chihuahuasLeft} Dogs left to be found!`,50,50);
+  pop();
+}
+
+function checkifWin(){
+  if (num_chihuahuasLeft ===0){
+    push();
+    fill(255,0,250);
+    textSize(32);
+    text(`YOU WON!!!!!!!!!!`,120,120);
+    pop();
   }
 }
