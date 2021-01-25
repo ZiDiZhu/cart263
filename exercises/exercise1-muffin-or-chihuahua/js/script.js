@@ -13,6 +13,9 @@ const NUM_muffinS = 40;
 const NUM_chihuahua_IMAGES = 2;
 const NUM_chihuahuaS = 3;
 
+//sfx
+let barkSFX;
+
 let num_chihuahuasLeft;
 
 let muffinImages = [];
@@ -30,6 +33,7 @@ function preload() {
     let chihuahuaImage = loadImage(`assets/images/chihuahua${i}.png`);
     chihuahuaImages.push(chihuahuaImage);
   }
+  barkSFX = loadSound(`assets/sounds/bark.wav`);
 }
 
 
