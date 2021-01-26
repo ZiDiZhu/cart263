@@ -24,6 +24,13 @@ let muffins = [];
 let chihuahuaImages = [];
 let chihuahuas = [];
 
+//message when clicked the wrong place
+let notDogText = `this aint a dog mate`;
+let notDogTextx;
+let notDogTexty;
+
+let clickedDog; //if user is clicking 1 in the 3 dogs
+
 function preload() {
   for (let i = 0; i < NUM_muffin_IMAGES; i++){
     let muffinImage = loadImage(`assets/images/muffin${i}.png`);
@@ -75,13 +82,17 @@ function draw() {
 
   displayText();
   checkifWin();
-
+  wrongClick();
 }
 
 function mousePressed(){
   for(let i = 0; i < chihuahuas.length; i++){
     chihuahuas[i].mousePressed();
   }
+  if (!clickedDog){
+    clickedOnNotDog();
+  }
+  clickedDog = false;
 }
 
 function displayText(){
@@ -100,4 +111,18 @@ function checkifWin(){
     text(`YOU WON!!!!!!!!!!`,120,120);
     pop();
   }
+}
+
+function wrongClick(){
+  push();
+  textSize(32);
+  textAlign(CENTER);
+  text (notDogText, notDogTextx,notDogTexty);
+  pop();
+  notDogTexty +=8;
+}
+
+function clickedOnNotDog(){
+  notDogTextx = mouseX;
+  notDogTexty = mouseY;
 }
