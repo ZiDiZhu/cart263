@@ -146,10 +146,16 @@ const animals = [
 let currentAnimal = ``;
 
 let phrase;
-let saying = ``;
+let saying = `click anywhere for an animal spelled backwards \n and guess the animal`;
 let currentanswer;
 
 let points = 0;
+
+let bg = {
+  r: 155,
+  g: 155,
+  b: 155
+}
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -157,6 +163,9 @@ function setup() {
   if (annyang){
     let commands = {
       'I think it is *animal': guessAnimal,
+      'My guess is *animal': guessAnimal,
+      '*animal': guessAnimal,
+      'Is it *animal':guessAnimal
     };
     annyang.addCommands(commands);
     annyang.start();
@@ -171,7 +180,9 @@ function setup() {
 Description of draw()
 */
 function draw() {
-  background(255);
+
+  background(bg.r,bg.g,bg.b);
+
 
   push();
   textSize(32);
@@ -187,20 +198,23 @@ function draw() {
 
   if (currentanswer === currentAnimal){
     points +=1;
-    currentanswer = ``;
     responsiveVoice.speak(`yes, it was a` + currentAnimal, "UK English Female", {
       rate:1.2,
-      onstart: showSpeaking,
-      onend: hideSpeaking
+      onstart: showScoringEffect,
+      onend: checkIfDevidableby3
     });
     currentAnimal = `placeholder`;
   }else{
+
+  }
     push();
     textSize(22);
     textAlign(CENTER);
-    text(currentanswer, 100, 300);
+    fill(200,100,0);
+    if (currentanswer != null) {
+      text(`you:` + currentanswer, width/2, 300);
+    }
     pop();
-  }
 }
 
 function mousePressed() {
@@ -220,7 +234,30 @@ function showSpeaking() {
 }
 
 function hideSpeaking() {
-  saying = `click anywhere`;
+  saying = `click anywhere for an animal spelled backwards \nand guess the animal`;
+}
+
+function showScoringEffect() {
+  bg.r = random(0,255);
+  bg.g = random(0,255);
+  bg.b = random(0,255);
+}
+
+function checkIfDevidableby3(){
+  if (points % 3 == 0){
+    responsiveVoice.speak(`hey, you are pretty good!`, "UK English Female", {
+      rate:1.2,
+      onend: hideScoringEffect
+    });
+  }else{
+    hideScoringEffect();
+  }
+}
+
+function hideScoringEffect() {
+  bg.r = 155;
+  bg.g = 155;
+  bg.b = 155;
 }
 
 function reverseString (string) {
@@ -233,5 +270,6 @@ function reverseString (string) {
 
 function guessAnimal (animal) {
    currentanswer = animal;
+   currentanswer.toLowerCase();
    console.log(currentAnimal);
 }
