@@ -188,7 +188,12 @@ function draw() {
   if (currentanswer === currentAnimal){
     points +=1;
     currentanswer = ``;
-    currentAnimal = ``;
+    responsiveVoice.speak(`yes, it was a` + currentAnimal, "UK English Female", {
+      rate:1.2,
+      onstart: showSpeaking,
+      onend: hideSpeaking
+    });
+    currentAnimal = `placeholder`;
   }else{
     push();
     textSize(22);
