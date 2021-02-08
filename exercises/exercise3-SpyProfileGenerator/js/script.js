@@ -5,11 +5,15 @@ Band Concept Generator
 Zi Di Zhu
 
 concept generator for your hypothetical, experimental music band!
+
+-Generates a bands' genre and number of members.
+- Each member plays a random instrument, has a unique name and their own catchphrase
+- You can reshuffle the concept at any time
+- You have to name your band, but you can change it at any time
+- cool visuals
+- 
 */
 
-/**
-Description of preload
-*/
 
 let bandProfile = {
   name: ``,
@@ -23,6 +27,8 @@ let instrumentData = undefined;
 let namesData = undefined;
 let namePrefixeData = undefined;
 let genreData = undefined;
+let quoteData = undefined;
+let img;
 
 let button;
 
@@ -31,6 +37,9 @@ function preload() {
   namesData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/humans/wrestlers.json`);
   instrumentData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/music/instruments.json`);
   genreData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/music/genres.json`);
+  quoteData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/words/us_president_quotes.json`);
+
+  img = loadImage('assets/images/Capture.JPG');
 }
 
 
@@ -41,7 +50,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
 
   bandProfile.genre = random(genreData.genres);
-  bandProfile.nbrOfMembers = random(2,4);
+  bandProfile.nbrOfMembers = random(2,6);
   generateMember();
 
   button = createButton('shuffle');
@@ -56,6 +65,8 @@ function setup() {
 
 function display() {
   background(20);
+    tint(100);
+    image(img,0,0);
 
   let profile = `** ${bandProfile.name} **
   Genre: ${bandProfile.genre}
@@ -73,8 +84,9 @@ function display() {
 
   for (let i = 0; i < bandProfile.nbrOfMembers; i++){
 
-    let memberProfile = `- ${members[i].title} ${members[i].name}
-    ${members[i].instrument} player,`;
+    let memberProfile = `${i+1}- ${members[i].title} ${members[i].name}
+    - ${members[i].instrument} player,
+    - catchphrase: "${members[i].quote} "`;
 
     push();
     textFont(`Helvetica`);
@@ -97,26 +109,28 @@ function shuffleBand(){
   while(members.length > 0) {
     members.pop();
 }
-  bandProfile.nbrOfMembers = random(2,4);
+  bandProfile.nbrOfMembers = random(2,6);
   generateMember();
   bandProfile.genre = random(genreData.genres);
 }
 
-function createMember(title, name, instrument,r,g,b){
+function createMember(title, name, instrument,r,g,b,quote){
   let member = {
     title : title,
     name : name,
     instrument : instrument,
     r:r,
     g:g,
-    b:b
+    b:b,
+    quote:quote,
   };
   return member;
 }
 
 function generateMember(){
   for (let i = 0; i < bandProfile.nbrOfMembers; i++){
-    let member = createMember(random(namePrefixeData.prefixes), random(namesData.wrestlers), random(instrumentData.instruments),random(0,255),random(0,255),random(0,255));
+    let quoteOrigin = random(quoteData.data);
+    let member = createMember(random(namePrefixeData.prefixes), random(namesData.wrestlers), random(instrumentData.instruments),random(90,255),random(90,255),random(90,255),random(quoteOrigin.quotes));
     members.push(member);
   }
   display();
