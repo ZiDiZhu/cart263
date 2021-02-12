@@ -11,7 +11,7 @@ concept generator for your hypothetical, experimental music band!
 - You can reshuffle the concept at any time
 - You have to name your band, but you can change it at any time
 - cool visuals
-- 
+-
 */
 
 
@@ -31,6 +31,8 @@ let quoteData = undefined;
 let img;
 
 let button;
+
+let number = 0;
 
 function preload() {
   namePrefixeData = loadJSON(`https://raw.githubusercontent.com/dariusk/corpora/master/data/humans/prefixes.json`);
@@ -61,7 +63,6 @@ function setup() {
   button.position(119, 19);
   button.mousePressed(renameBand);
 }
-
 
 function display() {
   background(20);

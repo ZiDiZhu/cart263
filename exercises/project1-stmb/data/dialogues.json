@@ -1,0 +1,22 @@
+{
+  "dialogues":[
+    {
+      "chara": "a",
+      "sprite" : "assets/images/clown.png",
+      "color": "red",
+      "sentence": "wwwwwwaaaaaaaaa"
+    },
+    {
+      "chara":"b",
+      "sprite" : "assets/images/clown.png",
+      "color": "green",
+      "sentence": "wwwwwwhyyyyyyyyyy"
+    },
+    {
+      "chara":"c",
+      "sprite" : "assets/images/clown.png",
+      "color": "blue",
+      "sentence": "aaaaaaaaaaaaaaaaaaa"
+    }
+  ]
+}
