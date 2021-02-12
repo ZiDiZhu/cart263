@@ -9,6 +9,8 @@ let currentdialogueNbr = 0; //indicates which dialogue it's displaying at the mo
 
 let img;
 
+let tColor; //textColor
+
 let dialogueData = undefined;
 
 function preload() {
@@ -47,8 +49,12 @@ function createDialogue(name, sprite, textColor, sentence){
 //generates the dialogue from the array of dialogues
 function generateDialogue(){
   for(let i = 0; i < dialogueData.dialogues.length; i++){
-    img = loadImage(dialogueData.dialogues[i].sprite);
-    let dialogue = createDialogue(dialogueData.dialogues[i].chara,img,color(dialogueData.dialogues[i].color),dialogueData.dialogues[i].sentence);
+    if(dialogueData.dialogues[i].chara === "a"){
+      tColor = color('red');
+    }else{
+      tColor = color('blue');
+    }
+    let dialogue = createDialogue(dialogueData.dialogues[i].chara,img,tColor,dialogueData.dialogues[i].sentence);
     dialogues.push(dialogue);
   }
 }
@@ -62,5 +68,4 @@ function displaydialogue(){
   text(`${dialogues[currentdialogueNbr].sentence}`, 100,100);
   pop();
 
-  image(img,200,200);
 }
