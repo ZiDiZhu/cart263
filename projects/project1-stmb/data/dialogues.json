@@ -1,8 +1,8 @@
 {
   "dialogues":[
     {
-      "chara": "a",
-      "sprite" : "assets/images/clown.png",
+      "chara": "Haru",
+      "sprite" : "haru1",
       "color": "red",
       "sentence": "wwwwwwaaaaaaaaa"
     },

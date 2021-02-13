@@ -13,22 +13,13 @@ let tColor; //textColor
 
 let dialogueData = undefined;
 
-function preload() {
-  dialogueData = loadJSON('data/dialogues.json');
-}
-
-
-function setup() {
-  createCanvas(800,600);
-  background(20);
-}
-
-
 function mousePressed() {
-  background(20);
- generateDialogue();
- displaydialogue();
- currentdialogueNbr ++;
+  //goes through dialogues
+  if(currentState === `cutscene`){
+    generateDialogue();
+    displaydialogue();
+    currentdialogueNbr ++;
+  }
 }
 
 
@@ -49,10 +40,15 @@ function createDialogue(name, sprite, textColor, sentence){
 //generates the dialogue from the array of dialogues
 function generateDialogue(){
   for(let i = 0; i < dialogueData.dialogues.length; i++){
-    if(dialogueData.dialogues[i].chara === "a"){
-      tColor = color('red');
+    if(dialogueData.dialogues[i].chara === "Haru"){
+      tColor = color('yellow');
     }else{
       tColor = color('blue');
+    }
+    if(dialogueData.dialogues[i].sprite ==="haru1"){
+      img = chr_haru_1;
+    }else{
+      img = chr_haru_1;
     }
     let dialogue = createDialogue(dialogueData.dialogues[i].chara,img,tColor,dialogueData.dialogues[i].sentence);
     dialogues.push(dialogue);
@@ -61,11 +57,25 @@ function generateDialogue(){
 
 function displaydialogue(){
 
+  //dialoguebox
+  push();
+  fill(120);
+  rectMode(LEFT);
+  rect(0,500,800,100);
+  pop();
+
+  //display character dialogue
   push();
   textSize(24);
-  textAlign(CENTER);
+  textAlign(LEFT);
   fill(dialogues[currentdialogueNbr].textColor);
-  text(`${dialogues[currentdialogueNbr].sentence}`, 100,100);
+  text(`${dialogues[currentdialogueNbr].sentence}`, 130,550);//dialogue
+  text(`${dialogues[currentdialogueNbr].name} :`,30,525);
   pop();
+
+  //character dialogue sprite
+  if(img){
+    image(img,30,530);
+  }
 
 }

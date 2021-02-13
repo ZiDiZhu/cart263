@@ -1,22 +1,14 @@
 "use strict";
 
 let currentScene; //opening; scene1 - scene10, ending
-
+let currentState; //exploration; cutscene; title
 
 function setup() {
 
   createCanvas(800,600);
   currentScene = `opening`;
+  currentState = `title`;
   displayOpeningScene();
-
-}
-
-function mouseClicked(){
-}
-
-
-
-function draw() {
 
 }
 
@@ -40,6 +32,7 @@ function displayOpeningScene(){
 function displayScene1(){
   console.log(`scene1`);
   currentScene = `scene1`;
+  currentState = `cutscene`;
   button_Start.remove();
 
   background(30,120,250);
