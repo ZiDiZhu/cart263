@@ -1,21 +1,28 @@
 {
   "dialogues":[
     {
-      "chara": "Haru",
-      "sprite" : "haru1",
-      "color": "red",
-      "sentence": "wwwwwwaaaaaaaaa"
+      "chara": "Soga",
+      "sprite" : "soga1",
+      "sentence": "Pretty hot day, ey?"
     },
     {
-      "chara":"b",
-      "sprite" : "assets/images/clown.png",
-      "color": "green",
-      "sentence": "wwwwwwhyyyyyyyyyy"
+      "chara":"Ishi",
+      "sprite" : "ishi1",
+      "sentence": "Yea, you don't say!"
+    },
+    {
+      "chara": "Haru",
+      "sprite" : "haru1",
+      "sentence": "Shut up, it's too hot to think."
+    },
+    {
+      "chara":"Niimi",
+      "sprite" : "niimi1",
+      "sentence": "It wouldn’t be hot if you didn’t break the Air Conditioner remote!"
     },
     {
       "chara":"c",
       "sprite" : "assets/images/clown.png",
-      "color": "blue",
       "sentence": "aaaaaaaaaaaaaaaaaaa"
     }
   ]

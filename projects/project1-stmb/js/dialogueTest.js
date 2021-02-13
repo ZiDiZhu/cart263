@@ -7,7 +7,7 @@ Links Dialogue with sprite and color
 let dialogues = [];//array of dialogues
 let currentdialogueNbr = 0; //indicates which dialogue it's displaying at the moment
 
-let img;
+let img = [];
 
 let tColor; //textColor
 
@@ -39,16 +39,33 @@ function createDialogue(name, sprite, textColor, sentence){
 
 //generates the dialogue from the array of dialogues
 function generateDialogue(){
+
   for(let i = 0; i < dialogueData.dialogues.length; i++){
+
+    //changes text color depending on character
     if(dialogueData.dialogues[i].chara === "Haru"){
       tColor = color('yellow');
+    }else if(dialogueData.dialogues[i].chara === "Soga"){
+      tColor = color('red');
+    }else if(dialogueData.dialogues[i].chara === "Ishi"){
+      tColor = color('green');
+    }else if(dialogueData.dialogues[i].chara === "Niimi"){
+      tColor = color('purple');
     }else{
-      tColor = color('blue');
+
     }
+
+    //reads which character dialogue sprite to display
     if(dialogueData.dialogues[i].sprite ==="haru1"){
-      img = chr_haru_1;
+      img[i] = chr_haru_1;
+    }else if(dialogueData.dialogues[i].sprite ==="soga1"){
+      img[i] = chr_soga_1;
+    }else if(dialogueData.dialogues[i].sprite ==="ishi1"){
+      img[i] = chr_ishi_1;
+    }else if(dialogueData.dialogues[i].sprite ==="niimi1"){
+      img[i] = chr_niimi_1;
     }else{
-      img = chr_haru_1;
+
     }
     let dialogue = createDialogue(dialogueData.dialogues[i].chara,img,tColor,dialogueData.dialogues[i].sentence);
     dialogues.push(dialogue);
@@ -69,13 +86,11 @@ function displaydialogue(){
   textSize(24);
   textAlign(LEFT);
   fill(dialogues[currentdialogueNbr].textColor);
-  text(`${dialogues[currentdialogueNbr].sentence}`, 130,550);//dialogue
+  text(`${dialogues[currentdialogueNbr].sentence}`, 100,550);//dialogue
   text(`${dialogues[currentdialogueNbr].name} :`,30,525);
   pop();
 
   //character dialogue sprite
-  if(img){
-    image(img,30,530);
-  }
+  image(img[currentdialogueNbr],30,530);
 
 }

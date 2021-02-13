@@ -34,6 +34,7 @@ function displayScene1(){
   currentScene = `scene1`;
   currentState = `cutscene`;
   button_Start.remove();
-
   background(30,120,250);
+
+  image(sce_club_warm,100,100);
 }
