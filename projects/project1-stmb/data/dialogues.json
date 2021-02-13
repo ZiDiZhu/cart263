@@ -21,9 +21,24 @@
       "sentence": "It wouldn’t be hot if you didn’t break the Air Conditioner remote!"
     },
     {
-      "chara":"c",
-      "sprite" : "assets/images/clown.png",
-      "sentence": "aaaaaaaaaaaaaaaaaaa"
+      "chara":"Soga",
+      "sprite" : "soga1",
+      "sentence": "It was *your* soda that was spilled on it!"
+    },
+    {
+      "chara":"Haru",
+      "sprite" : "haru1",
+      "sentence": "Guys! let's not waste energy arguing."
+    },
+    {
+      "chara":"Niimi",
+      "sprite" : "niimi1",
+      "sentence": "Yea! we should do something about it."
+    },
+    {
+      "chara":"Inspection",
+      "sprite" : "",
+      "sentence": "Inspect the room by clicking on items"
     }
   ]
 }

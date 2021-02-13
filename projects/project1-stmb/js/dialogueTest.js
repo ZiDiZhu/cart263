@@ -14,6 +14,10 @@ let tColor; //textColor
 let dialogueData = undefined;
 
 function mousePressed() {
+  //click anywhere to start
+  if(currentState === `title`){
+    displayScene1();
+  }
   //goes through dialogues
   if(currentState === `cutscene`){
     generateDialogue();
@@ -51,6 +55,8 @@ function generateDialogue(){
       tColor = color('green');
     }else if(dialogueData.dialogues[i].chara === "Niimi"){
       tColor = color('purple');
+    }else if(dialogueData.dialogues[i].chara === "Inspection"){
+      tColor = color('white');
     }else{
 
     }
