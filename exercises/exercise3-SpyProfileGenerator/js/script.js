@@ -14,6 +14,7 @@ concept generator for your hypothetical, experimental music band!
 -
 */
 
+let bandName;
 
 let bandProfile = {
   name: ``,
@@ -45,9 +46,7 @@ function preload() {
 }
 
 
-/**
-Description of setup
-*/
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
@@ -62,6 +61,14 @@ function setup() {
   button = createButton('Name your band');
   button.position(119, 19);
   button.mousePressed(renameBand);
+
+  bandName = getItem('bandName');
+   if (bandName === null) {
+     bandName = '';
+   }
+   bandProfile.name = bandName;
+   display();
+
 }
 
 function display() {
@@ -102,7 +109,9 @@ function display() {
 }
 
 function renameBand(){
-  bandProfile.name = prompt(`What's the name of your band?`);
+  bandName = prompt(`What's the name of your band?`);
+  storeItem('bandName',bandName);
+  bandProfile.name = bandName;
   display();
 }
 
