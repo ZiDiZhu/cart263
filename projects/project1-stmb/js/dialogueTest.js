@@ -14,15 +14,17 @@ let tColor; //textColor
 let dialogueData = undefined;
 
 function mousePressed() {
+  console.log(`${currentState}`);
   //click anywhere to start
   if(currentState === `title`){
     displayScene1();
   }
   //goes through dialogues
-  if(currentState === `cutscene`){
-    generateDialogue();
+  else if(currentState === `cutscene`){
+    generateDialogue(scene1Dialogues);
     displaydialogue();
     currentdialogueNbr ++;
+  }else{
   }
 }
 
@@ -42,7 +44,7 @@ function createDialogue(name, sprite, textColor, sentence){
 
 
 //generates the dialogue from the array of dialogues
-function generateDialogue(){
+function generateDialogue(dialogueData){
 
   for(let i = 0; i < dialogueData.dialogues.length; i++){
 
@@ -76,6 +78,15 @@ function generateDialogue(){
     let dialogue = createDialogue(dialogueData.dialogues[i].chara,img,tColor,dialogueData.dialogues[i].sentence);
     dialogues.push(dialogue);
   }
+
+  //check if at the end of dialogues
+  if(currentdialogueNbr >= dialogueData.dialogues.length){
+    currentdialogueNbr = 0;
+    dialogues = [];
+    if(currentScene === `scene1`){
+      currentState = `inspection`;
+    }
+  }
 }
 
 function displaydialogue(){
@@ -87,7 +98,7 @@ function displaydialogue(){
   rect(0,500,800,100);
   pop();
 
-  //display character dialogue
+  //display current character dialogue
   push();
   textSize(24);
   textAlign(LEFT);
@@ -98,5 +109,6 @@ function displaydialogue(){
 
   //character dialogue sprite
   image(img[currentdialogueNbr],30,530);
+
 
 }

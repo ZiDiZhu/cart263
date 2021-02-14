@@ -1,0 +1,14 @@
+{
+  "acRemote_dialogues":[
+    {
+      "chara": "AC remote",
+      "sprite":"",
+      "sentence": "Remote for the air conditioner, but it's broken."
+    },
+    {
+      "chara": "Niimi",
+      "sprite" : "niimi1",
+      "sentence": "Yep, that doesn't work."
+    }
+  ]
+}

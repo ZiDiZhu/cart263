@@ -1,7 +1,7 @@
 "use strict";
 
 let currentScene; //opening; scene1 - scene10, ending
-let currentState; //exploration; cutscene; title
+let currentState; //inspection; cutscene; title
 
 function setup() {
 
@@ -39,5 +39,7 @@ function displayScene1(){
   image(_chr_ishi,360,280);
   image(_chr_haru,360,330);
   image(_chr_soga,200,180);
+  //items
+  image(item_remote.img,315,310);
 
 }

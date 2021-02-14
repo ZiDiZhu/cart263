@@ -20,8 +20,19 @@ let chr_niimi_1;
 //environment art assets
 let sce_club_warm;
 
+//items
+let item_remote = {
+  x: 0,
+  y: 0,
+  img:undefined
+}
+
+//dialogues
+let scene1Dialogues;
+
 function preload() {
-  dialogueData = loadJSON('data/dialogues.json');
+  //scene1
+  scene1Dialogues = loadJSON('data/dialogues.json');
 
   titleImg = loadImage('assets/images/title.png');
 
@@ -41,4 +52,7 @@ function preload() {
   chr_niimi_1 = loadImage('assets/images/chr_niimi_1.png');
 
   sce_club_warm = loadImage('assets/images/sce_club_warm.png');
+
+  //items
+  item_remote.img = loadImage('assets/images/item_remote.png');
 }
