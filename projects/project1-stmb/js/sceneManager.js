@@ -35,10 +35,10 @@ function displayScene1(){
   //room background
   image(sce_club_warm,100,100);
   //characters
-  image(_chr_niimi,260,300);
-  image(_chr_ishi,360,280);
-  image(_chr_haru,360,330);
-  image(_chr_soga,200,180);
+  image(chr_niimi,260,300);
+  image(chr_ishi,360,280);
+  image(chr_haru,360,330);
+  image(chr_soga,200,180);
 
   //interactable items
   push();

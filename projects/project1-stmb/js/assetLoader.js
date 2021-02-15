@@ -5,10 +5,10 @@
 let titleImg;
 
 //character overworld sprites
-let _chr_haru;
-let _chr_ishi;
-let _chr_niimi;
-let _chr_soga;
+let chr_haru;
+let chr_ishi;
+let chr_niimi;
+let chr_soga;
 
 //character dialogue sprites
 let chr_haru_1;//suffix_1: neutral expression
@@ -67,10 +67,10 @@ function preload() {
   titleImg = loadImage('assets/images/title.png');
 
   //character sprites in scene
-  _chr_haru = loadImage('assets/images/_chr_haru.png');
-  _chr_ishi = loadImage('assets/images/_chr_ishi.png');
-  _chr_niimi = loadImage('assets/images/_chr_niimi.png');
-  _chr_soga = loadImage('assets/images/_chr_soga.png');
+  chr_haru = loadImage('assets/images/_chr_haru.png');
+  chr_ishi = loadImage('assets/images/_chr_ishi.png');
+  chr_niimi = loadImage('assets/images/_chr_niimi.png');
+  chr_soga = loadImage('assets/images/_chr_soga.png');
 
   //character dialogue sprites
   chr_haru_1 = loadImage('assets/images/chr_haru_1.png');
