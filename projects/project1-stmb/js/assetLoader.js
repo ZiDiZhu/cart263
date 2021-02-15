@@ -67,10 +67,10 @@ function preload() {
   titleImg = loadImage('assets/images/title.png');
 
   //character sprites in scene
-  chr_haru = loadImage('assets/images/_chr_haru.png');
-  chr_ishi = loadImage('assets/images/_chr_ishi.png');
-  chr_niimi = loadImage('assets/images/_chr_niimi.png');
-  chr_soga = loadImage('assets/images/_chr_soga.png');
+  chr_haru = loadImage('assets/images/chr_haru.png');
+  chr_ishi = loadImage('assets/images/chr_ishi.png');
+  chr_niimi = loadImage('assets/images/chr_niimi.png');
+  chr_soga = loadImage('assets/images/chr_soga.png');
 
   //character dialogue sprites
   chr_haru_1 = loadImage('assets/images/chr_haru_1.png');
