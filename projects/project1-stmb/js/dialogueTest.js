@@ -13,18 +13,32 @@ let tColor; //textColor
 
 let dialogueData = undefined;
 
+let currentItem; //
+
 function mousePressed() {
-  console.log(`${currentState}`);
+  //console.log(`${currentState}`);
   //click anywhere to start
   if(currentState === `title`){
     displayScene1();
   }
   //goes through dialogues
   else if(currentState === `cutscene`){
-    generateDialogue(scene1Dialogues);
-    displaydialogue();
+    generateDialogue(cutsceneDialogues.scene1Dialogues);
     currentdialogueNbr ++;
-  }else{
+  }else if (currentState === `inspection`){
+    if( currentItem === `acRemote`){
+      generateDialogue(itemDialogue.acRemote_dialogues);
+      currentdialogueNbr ++;
+    }else if (currentItem === `ac`){
+      generateDialogue(itemDialogue.Air_Conditioner_dialogues);
+      currentdialogueNbr ++;
+    }else if (currentItem === `penpen`){
+      generateDialogue(itemDialogue.penPen_dialogues);
+      currentdialogueNbr ++;
+    }else if (currentItem === `pictureBoard`){
+      generateDialogue(itemDialogue.Pictures_Board_dialogues);
+      currentdialogueNbr ++;
+    }
   }
 }
 
@@ -46,47 +60,61 @@ function createDialogue(name, sprite, textColor, sentence){
 //generates the dialogue from the array of dialogues
 function generateDialogue(dialogueData){
 
-  for(let i = 0; i < dialogueData.dialogues.length; i++){
+  for(let i = 0; i < dialogueData.length; i++){
 
     //changes text color depending on character
-    if(dialogueData.dialogues[i].chara === "Haru"){
+    if(dialogueData[i].chara === "Haru"){
       tColor = color('yellow');
-    }else if(dialogueData.dialogues[i].chara === "Soga"){
+    }else if(dialogueData[i].chara === "Soga"){
       tColor = color('red');
-    }else if(dialogueData.dialogues[i].chara === "Ishi"){
+    }else if(dialogueData[i].chara === "Ishi"){
       tColor = color('green');
-    }else if(dialogueData.dialogues[i].chara === "Niimi"){
+    }else if(dialogueData[i].chara === "Niimi"){
       tColor = color('purple');
-    }else if(dialogueData.dialogues[i].chara === "Inspection"){
+    }else if(dialogueData[i].chara === "Inspection"){
       tColor = color('white');
     }else{
 
     }
 
     //reads which character dialogue sprite to display
-    if(dialogueData.dialogues[i].sprite ==="haru1"){
+    //..maybe should've simplified the repetition here
+    if(dialogueData[i].sprite ==="haru1"){
       img[i] = chr_haru_1;
-    }else if(dialogueData.dialogues[i].sprite ==="soga1"){
+    }else if(dialogueData[i].sprite ==="haru2"){
+      img[i] = chr_haru_2;
+    }else if(dialogueData[i].sprite ==="haru3"){
+      img[i] = chr_haru_3;
+    }else if(dialogueData[i].sprite ==="soga1"){
       img[i] = chr_soga_1;
-    }else if(dialogueData.dialogues[i].sprite ==="ishi1"){
+    }else if(dialogueData[i].sprite ==="ishi1"){
       img[i] = chr_ishi_1;
-    }else if(dialogueData.dialogues[i].sprite ==="niimi1"){
+    }else if(dialogueData[i].sprite ==="ishi2"){
+      img[i] = chr_ishi_2;
+    }else if(dialogueData[i].sprite ==="ishi3"){
+      img[i] = chr_ishi_3;
+    }else if(dialogueData[i].sprite ==="niimi1"){
       img[i] = chr_niimi_1;
     }else{
 
     }
-    let dialogue = createDialogue(dialogueData.dialogues[i].chara,img,tColor,dialogueData.dialogues[i].sentence);
+    let dialogue = createDialogue(dialogueData[i].chara,img,tColor,dialogueData[i].sentence);
     dialogues.push(dialogue);
   }
 
   //check if at the end of dialogues
-  if(currentdialogueNbr >= dialogueData.dialogues.length){
+  if(currentdialogueNbr >= dialogueData.length){
     currentdialogueNbr = 0;
     dialogues = [];
     if(currentScene === `scene1`){
       currentState = `inspection`;
     }
+    if (currentState === `inspection`){
+      currentItem = '';
+    }
   }
+
+  displaydialogue();
 }
 
 function displaydialogue(){

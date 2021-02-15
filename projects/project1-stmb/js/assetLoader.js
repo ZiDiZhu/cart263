@@ -1,5 +1,7 @@
 "use strict";
 
+//this scripts loads assets and stores objects data
+
 let titleImg;
 
 //character overworld sprites
@@ -8,31 +10,59 @@ let _chr_ishi;
 let _chr_niimi;
 let _chr_soga;
 
-//character sprites
+//character dialogue sprites
 let chr_haru_1;//suffix_1: neutral expression
+let chr_haru_2;//suffix_2: shock/angry
+let chr_haru_3;//suffix_3: happy/laugh
 
 let chr_soga_1;
+let chr_soga_2;
+let chr_soga_3;
 
 let chr_ishi_1;
+let chr_ishi_2;
+let chr_ishi_3;
 
 let chr_niimi_1;
+let chr_niimi_2;
+let chr_niimi_3;
 
 //environment art assets
 let sce_club_warm;
 
 //items
 let item_remote = {
-  x: 0,
-  y: 0,
+  x: 345,
+  y: 320,
+  img:undefined
+}
+
+let item_ac = {
+  x: 230,
+  y: 120,
+  img:undefined
+}
+
+let item_penpen = {
+  x: 420,
+  y: 170,
+  img:undefined
+}
+
+let item_pictureBoard = {
+  x: 365,
+  y: 240,
   img:undefined
 }
 
 //dialogues
-let scene1Dialogues;
+let cutsceneDialogues;
+let itemDialogue;
 
 function preload() {
-  //scene1
-  scene1Dialogues = loadJSON('data/dialogues.json');
+  //cutescene dialogues
+  cutsceneDialogues = loadJSON('data/dialogues.json');
+  itemDialogue = loadJSON('data/itemsDialogue.json');
 
   titleImg = loadImage('assets/images/title.png');
 
@@ -44,10 +74,14 @@ function preload() {
 
   //character dialogue sprites
   chr_haru_1 = loadImage('assets/images/chr_haru_1.png');
+  chr_haru_2 = loadImage('assets/images/chr_haru_2.png');
+  chr_haru_3 = loadImage('assets/images/chr_haru_3.png');
 
   chr_soga_1 = loadImage('assets/images/chr_soga_1.png');
 
   chr_ishi_1 = loadImage('assets/images/chr_ishi_1.png');
+  chr_ishi_2 = loadImage('assets/images/chr_ishi_2.png');
+  chr_ishi_3 = loadImage('assets/images/chr_ishi_3.png');
 
   chr_niimi_1 = loadImage('assets/images/chr_niimi_1.png');
 
@@ -55,4 +89,7 @@ function preload() {
 
   //items
   item_remote.img = loadImage('assets/images/item_remote.png');
+  item_ac.img = loadImage('assets/images/item_ac.png');
+  item_penpen.img = loadImage('assets/images/item_penpen.png');
+  item_pictureBoard.img = loadImage('assets/images/item_pictureBoard.png');
 }

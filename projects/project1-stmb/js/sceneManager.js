@@ -39,7 +39,18 @@ function displayScene1(){
   image(_chr_ishi,360,280);
   image(_chr_haru,360,330);
   image(_chr_soga,200,180);
-  //items
-  image(item_remote.img,315,310);
+
+  //interactable items
+  push();
+  imageMode(CENTER);
+  image(item_remote.img,item_remote.x,item_remote.y);
+  image(item_ac.img,item_ac.x,item_ac.y);
+  image(item_penpen.img,item_penpen.x,item_penpen.y);
+  image(item_pictureBoard.img,item_pictureBoard.x,item_pictureBoard.y);
+
+  pop();
+
+  generateDialogue(cutsceneDialogues.scene1Dialogues);
+  currentdialogueNbr ++;
 
 }

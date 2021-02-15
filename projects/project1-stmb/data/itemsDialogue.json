@@ -8,7 +8,81 @@
     {
       "chara": "Niimi",
       "sprite" : "niimi1",
-      "sentence": "Yep, that doesn't work."
+      "sentence": "Yep, that's broken"
+    }
+  ],
+
+  "penPen_dialogues":[
+    {
+      "chara": "Ishi",
+      "sprite":"ishi3",
+      "sentence": "Hey, we should move Pen-Pen in the center of the room!\n So it looks cooler, visually"
+    },
+    {
+      "chara": "Soga",
+      "sprite":"soga1",
+      "sentence": "No way. Why did you bring in this piece of trash anyway? \nIt’s creepy."
+    },
+    {
+      "chara": "Ishi",
+      "sprite":"ishi2",
+      "sentence": "DONT TALK SHIT ABOUT PEN-PEN!"
+    },
+    {
+      "chara": "Ishi",
+      "sprite":"ishi2",
+      "sentence": "Besides, didn't you say it would \nmake a good mascot for our club yesterday?"
+    },
+    {
+      "chara": "Soga",
+      "sprite":"soga1",
+      "sentence": "WHAT? No! I never said that."
+    }
+  ],
+
+  "Air_Conditioner_dialogues":[
+    {
+      "chara": "Soga",
+      "sprite":"soga1",
+      "sentence": "That's our air conditioner"
+    },
+    {
+      "chara": "Ishi",
+      "sprite":"ishi2",
+      "sentence": "Why the heck don't they put a switch on the AC itself?"
+    },
+    {
+      "chara": "Soga",
+      "sprite":"soga1",
+      "sentence": "Yea, it’s not gonna work without the remote."
+    }
+  ],
+
+  "Pictures_Board_dialogues":[
+    {
+      "chara": "Niimi",
+      "sprite":"niimi1",
+      "sentence": "Hey Haru! Are those pictures you took yesterday?"
+    },
+    {
+      "chara": "Haru",
+      "sprite":"haru3",
+      "sentence": "Yep!"
+    },
+    {
+      "chara": "Soga",
+      "sprite":"soga1",
+      "sentence": "Oh yea, when we were hanging out in the yard!"
+    },
+    {
+      "chara": "Ishi",
+      "sprite":"Ishi3",
+      "sentence": "They’re pretty nice!"
+    },
+    {
+      "chara": "Haru",
+      "sprite":"haru3",
+      "sentence": "I’ll print out more photos then!"
     }
   ]
 }

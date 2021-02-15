@@ -1,5 +1,5 @@
 {
-  "dialogues":[
+  "scene1Dialogues":[
     {
       "chara": "Soga",
       "sprite" : "soga1",
@@ -38,7 +38,7 @@
     {
       "chara":"Inspection",
       "sprite" : "haru1",
-      "sentence": "Inspect the room by clicking on items"
+      "sentence": "Inspect the room by double clicking on item"
     }
   ]
 }
