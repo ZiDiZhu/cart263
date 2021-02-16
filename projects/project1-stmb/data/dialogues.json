@@ -16,6 +16,11 @@
       "sentence": "Shut up, it's too hot to think."
     },
     {
+      "chara": "Soga",
+      "sprite" : "soga1",
+      "sentence": "It's almost 40 degree celsius! It's just unberable!"
+    },
+    {
       "chara":"Niimi",
       "sprite" : "niimi1",
       "sentence": "It wouldn’t be hot if you didn’t break the Air Conditioner remote!"

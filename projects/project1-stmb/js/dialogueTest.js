@@ -14,6 +14,16 @@ let tColor; //textColor
 let dialogueData = undefined;
 
 let currentItem; //
+let inItemDialogue = false;
+
+//checks if item is investigated
+let itemChecklist = {
+  acRemote_Checked: false,
+  penpen_Checked: false,
+  ac_Checked: false,
+  pictureBoard_Checked: false,
+  scene1Checklist :0
+}
 
 function mousePressed() {
   //console.log(`${currentState}`);
@@ -29,15 +39,30 @@ function mousePressed() {
     if( currentItem === `acRemote`){
       generateDialogue(itemDialogue.acRemote_dialogues);
       currentdialogueNbr ++;
+      currentItem = `acRemote`;
     }else if (currentItem === `ac`){
       generateDialogue(itemDialogue.Air_Conditioner_dialogues);
       currentdialogueNbr ++;
+      currentItem = `ac`;
     }else if (currentItem === `penpen`){
       generateDialogue(itemDialogue.penPen_dialogues);
       currentdialogueNbr ++;
+      currentItem = `penpen`;
     }else if (currentItem === `pictureBoard`){
       generateDialogue(itemDialogue.Pictures_Board_dialogues);
       currentdialogueNbr ++;
+      currentItem = `pictureBoard`;
+    }
+    checkIfNextScene();
+  }
+}
+
+function checkIfNextScene (){
+  //checks if player has gone through all the dialogues
+  if(currentScene === `scene1`){
+    displayItemsLeft(itemChecklist.scene1Checklist);
+    if(itemChecklist.scene1Checklist >=4){
+      //change scene
     }
   }
 }
@@ -74,7 +99,7 @@ function generateDialogue(dialogueData){
     }else if(dialogueData[i].chara === "Inspection"){
       tColor = color('white');
     }else{
-
+      tColor = color('white');
     }
 
     //reads which character dialogue sprite to display
@@ -110,7 +135,21 @@ function generateDialogue(dialogueData){
       currentState = `inspection`;
     }
     if (currentState === `inspection`){
+      if (currentItem ===`acRemote`){
+        itemChecklist.acRemote_Checked = true;
+        itemChecklist.scene1Checklist ++;
+      }else if (currentItem ===`ac`){
+        itemChecklist.ac_Checked = true;
+        itemChecklist.scene1Checklist ++;
+      }else if (currentItem ===`penpen`){
+        itemChecklist.penpen_Checked = true;
+        itemChecklist.scene1Checklist ++;
+      }else if (currentItem ===`pictureBoard`){
+        itemChecklist.pictureBoard_Checked = true;
+        itemChecklist.scene1Checklist ++;
+      }
       currentItem = '';
+      inItemDialogue = false;
     }
   }
 
@@ -137,6 +176,13 @@ function displaydialogue(){
 
   //character dialogue sprite
   image(img[currentdialogueNbr],30,530);
+}
 
-
+function displayItemsLeft(sceneItems){
+  push();
+  fill(120);
+  rectMode(LEFT);
+  rect(0,0,800,50);
+  pop();
+  text(`items inspected: ${sceneItems} / 4`,20,20);
 }

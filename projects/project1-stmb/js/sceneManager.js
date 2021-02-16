@@ -3,6 +3,7 @@
 let currentScene; //opening; scene1 - scene10, ending
 let currentState; //inspection; cutscene; title
 
+
 function setup() {
 
   createCanvas(800,600);
