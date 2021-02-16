@@ -45,5 +45,53 @@
       "sprite" : "haru1",
       "sentence": "Inspect the room by double clicking on item"
     }
+  ],
+
+  "scene1TransitionDialogues_1":[
+    {
+      "chara": "Haru",
+      "sprite" : "haru1",
+      "sentence": "Should we call the Air Conditioner company for fixing the remote?"
+    },
+    {
+      "chara": "Soga",
+      "sprite" : "soga1",
+      "sentence": "No way, the AC is older than us. The warranty expired decades ago."
+    },
+    {
+      "chara": "Niimi",
+      "sprite" : "niimi1",
+      "sentence": "We can try to fix the remote ourselves!"
+    },
+    {
+      "chara": "Soga",
+      "sprite" : "soga1",
+      "sentence": "How do you do that?"
+    },
+    {
+      "chara": "Niimi",
+      "sprite" : "niimi1",
+      "sentence": "...?"
+    },
+    {
+      "chara": "Ishi",
+      "sprite" : "ishi2",
+      "sentence": "No this is not how you do it!"
+    },
+    {
+      "chara": "Haru",
+      "sprite" : "haru1",
+      "sentence": "Give the remote to me! Let me try."
+    },
+    {
+      "chara": "Ishi",
+      "sprite" : "ishi2",
+      "sentence": "No, let me try!"
+    },
+    {
+      "chara": "Haru",
+      "sprite" : "haru2",
+      "sentence": "...!"
+    }
   ]
 }

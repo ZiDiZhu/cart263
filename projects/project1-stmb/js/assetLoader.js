@@ -78,12 +78,16 @@ function preload() {
   chr_haru_3 = loadImage('assets/images/chr_haru_3.png');
 
   chr_soga_1 = loadImage('assets/images/chr_soga_1.png');
+  chr_soga_2 = loadImage('assets/images/chr_soga_2.png');
+  chr_soga_3 = loadImage('assets/images/chr_soga_3.png');
 
   chr_ishi_1 = loadImage('assets/images/chr_ishi_1.png');
   chr_ishi_2 = loadImage('assets/images/chr_ishi_2.png');
   chr_ishi_3 = loadImage('assets/images/chr_ishi_3.png');
 
   chr_niimi_1 = loadImage('assets/images/chr_niimi_1.png');
+  chr_niimi_2 = loadImage('assets/images/chr_niimi_2.png');
+  chr_niimi_3 = loadImage('assets/images/chr_niimi_3.png');
 
   sce_club_warm = loadImage('assets/images/sce_club_warm.png');
 

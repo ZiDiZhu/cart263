@@ -55,3 +55,8 @@ function displayScene1(){
   currentdialogueNbr ++;
 
 }
+
+function playScene1Transition(){
+
+  generateDialogue(cutsceneDialogues.scene1TransitionDialogues_1);
+}

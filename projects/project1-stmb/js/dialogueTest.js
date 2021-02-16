@@ -62,7 +62,8 @@ function checkIfNextScene (){
   if(currentScene === `scene1`){
     displayItemsLeft(itemChecklist.scene1Checklist);
     if(itemChecklist.scene1Checklist >=4){
-      //change scene
+      playScene1Transition();
+      currentState = `cutscene`;
     }
   }
 }
@@ -88,6 +89,7 @@ function generateDialogue(dialogueData){
   for(let i = 0; i < dialogueData.length; i++){
 
     //changes text color depending on character
+    //this part should be simplified
     if(dialogueData[i].chara === "Haru"){
       tColor = color('yellow');
     }else if(dialogueData[i].chara === "Soga"){
@@ -184,5 +186,5 @@ function displayItemsLeft(sceneItems){
   rectMode(LEFT);
   rect(0,0,800,50);
   pop();
-  text(`items inspected: ${sceneItems} / 4`,20,20);
+  text(`items inspected: ${sceneItems} /4`,20,20);
 }
