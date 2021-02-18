@@ -14,7 +14,13 @@ let handpose = undefined;
 
 let predictions = [];
 
-let bubble = undefined;
+let bubbles = [];
+
+let nbrofbubbles = 5;
+
+let bubblesPopped = 0;
+
+let barkSFX;
 
 function preload() {}
 
@@ -23,7 +29,9 @@ function setup() {
   createCanvas(680, 480);
   video = createCapture(VIDEO);
   video.size(640,480);
-  //capture.hide();
+  video.hide();
+
+  barkSFX = loadSound(`assets/sounds/bark.wav`);
 
   //load the handpos model
   handpose = ml5.handpose(video, {
@@ -39,14 +47,24 @@ function setup() {
     predictions = results;
   });
 
-  bubble = {
-    x: random(width),
-    y: height,
-    size: 100,
-    vy: -2,
-    vx : random(0,3)
+  for(let i = 0; i < 5; i ++){
+    createBubble();
   }
 
+}
+
+function createBubble(){
+  let bubble = {
+    x: random(width),
+    y: height,
+    size: 50,
+    vy: -2,
+    vx : random(-2,2),
+    r: random(0,255),
+    b: random(0,255),
+    g: random(0,255)
+  }
+  bubbles.push(bubble);
 }
 
 function draw() {
@@ -78,26 +96,36 @@ function draw() {
     ellipse(baseX,baseY,20);
     pop();
 
-
-    let d = dist(tipX, tipY, bubble.x, bubble.y);
-    if ( d < bubble.size /2){
-      bubble.x = random(width);
-      bubble.y = height;
+    for (let i = 0; i < bubbles.length; i++){
+      let d = dist(tipX, tipY, bubbles[i].x, bubbles[i].y);
+      if ( d < bubbles[i].size /2){
+        bubbles[i].size = 3;
+        createBubble();
+        bubblesPopped++;
+        barkSFX.play();
+      }
     }
   }
 
-  //bubble movement
-  bubble.x += bubble.vx;
-  bubble.y += bubble.vy;
+  for(let i = 0; i < bubbles.length; i++){
+    //bubble movement
+    bubbles[i].x += bubbles[i].vx;
+    bubbles[i].y += bubbles[i].vy;
 
-  if (bubble.y <0) {
-    bubble.x = random(width);
-    bubble.y = height;
+    if (bubbles[i].y <0) {
+      bubbles[i]. y = height;
+      bubbles[i].vx = -bubble[i].vx;
+    }
+    push();
+    fill(bubbles[i].r,bubbles[i].b,bubbles[i].g);
+    ellipse(bubbles[i].x, bubbles[i].y, bubbles[i].size);
+    pop();
   }
 
   push();
-  fill(220);
-  ellipse(bubble.x, bubble.y, bubble.size);
+  fill(255,0,0);
+  textSize(24);
+  text(`bubbles popped: ${bubblesPopped}`, 100,100);
   pop();
 
 }
