@@ -36,25 +36,30 @@ function mousePressed() {
     generateDialogue(cutsceneDialogues.scene1Dialogues);
     currentdialogueNbr ++;
   }else if (currentState === `inspection`){
-    if( currentItem === `acRemote`){
-      generateDialogue(itemDialogue.acRemote_dialogues);
-      currentdialogueNbr ++;
-      currentItem = `acRemote`;
-    }else if (currentItem === `ac`){
-      generateDialogue(itemDialogue.Air_Conditioner_dialogues);
-      currentdialogueNbr ++;
-      currentItem = `ac`;
-    }else if (currentItem === `penpen`){
-      generateDialogue(itemDialogue.penPen_dialogues);
-      currentdialogueNbr ++;
-      currentItem = `penpen`;
-    }else if (currentItem === `pictureBoard`){
-      generateDialogue(itemDialogue.Pictures_Board_dialogues);
-      currentdialogueNbr ++;
-      currentItem = `pictureBoard`;
-    }
-    checkIfNextScene();
+    updateItemDialogue();
   }
+}
+
+//checks which item it is inspecting currently and goes though its dialogues
+function updateItemDialogue(){
+  if(currentItem === `acRemote`){
+    generateDialogue(itemDialogue.acRemote_dialogues);
+    currentdialogueNbr ++;
+    currentItem = `acRemote`;
+  }else if (currentItem === `ac`){
+    generateDialogue(itemDialogue.Air_Conditioner_dialogues);
+    currentdialogueNbr ++;
+    currentItem = `ac`;
+  }else if (currentItem === `penpen`){
+    generateDialogue(itemDialogue.penPen_dialogues);
+    currentdialogueNbr ++;
+    currentItem = `penpen`;
+  }else if (currentItem === `pictureBoard`){
+    generateDialogue(itemDialogue.Pictures_Board_dialogues);
+    currentdialogueNbr ++;
+    currentItem = `pictureBoard`;
+  }
+  checkIfNextScene();
 }
 
 function checkIfNextScene (){
@@ -152,6 +157,8 @@ function generateDialogue(dialogueData){
       }
       currentItem = '';
       inItemDialogue = false;
+      //updates the display of the number of items investigated
+      displayItemsLeft(itemChecklist.scene1Checklist);
     }
   }
 
