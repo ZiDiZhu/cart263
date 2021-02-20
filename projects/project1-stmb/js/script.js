@@ -1,8 +1,8 @@
 "use strict";
 
 /**
-Title of Project
-Author Name
+Summer Time Machine Blues
+Zi Di
 
 This is a template. You must fill in the title,
 author, and this description to match your project!
@@ -56,5 +56,21 @@ function draw() {
     }else{
       cursor(ARROW);
     }
+  }
+}
+
+function mousePressed() {
+  //console.log(`${currentState}`);
+  //click anywhere to start
+  if(currentState === `title`){
+    displayScene1();
+    currentScene = `scene1`;
+  }
+  //goes through dialogues
+  else if(currentState === `cutscene`){
+    generateDialogue(cutsceneDialogues.scene1Dialogues);
+    currentdialogueNbr ++;
+  }else if (currentState === `inspection`){
+    updateItemDialogue();
   }
 }

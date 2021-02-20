@@ -28,9 +28,9 @@ function displayOpeningScene(){
   image(titleImg,200,200);
 }
 
+//display the sprites
 function displayScene1(){
-  console.log(`scene1`);
-  currentScene = `scene1`;
+  //console.log(`scene1`);
   currentState = `cutscene`;
   background(30,120,250);
   //room background
@@ -44,10 +44,14 @@ function displayScene1(){
   //interactable items
   push();
   imageMode(CENTER);
-  image(item_remote.img,item_remote.x,item_remote.y);
   image(item_ac.img,item_ac.x,item_ac.y);
   image(item_penpen.img,item_penpen.x,item_penpen.y);
   image(item_pictureBoard.img,item_pictureBoard.x,item_pictureBoard.y);
+  if(currentScene ===`scene1Transition_2`){
+    image(item_remote_broken.img,item_remote.x,item_remote.y);
+  }else{
+    image(item_remote.img,item_remote.x,item_remote.y);
+  }
 
   pop();
 

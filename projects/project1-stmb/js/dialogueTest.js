@@ -25,20 +25,6 @@ let itemChecklist = {
   scene1Checklist :0
 }
 
-function mousePressed() {
-  //console.log(`${currentState}`);
-  //click anywhere to start
-  if(currentState === `title`){
-    displayScene1();
-  }
-  //goes through dialogues
-  else if(currentState === `cutscene`){
-    generateDialogue(cutsceneDialogues.scene1Dialogues);
-    currentdialogueNbr ++;
-  }else if (currentState === `inspection`){
-    updateItemDialogue();
-  }
-}
 
 //checks which item it is inspecting currently and goes though its dialogues
 function updateItemDialogue(){
@@ -62,19 +48,21 @@ function updateItemDialogue(){
   checkIfNextScene();
 }
 
+//checks if player has gone through all the dialogues
 function checkIfNextScene (){
-  //checks if player has gone through all the dialogues
+
   if(currentScene === `scene1`){
     displayItemsLeft(itemChecklist.scene1Checklist);
     if(itemChecklist.scene1Checklist >=4){
       playScene1Transition();
       currentState = `cutscene`;
+      currentScene = `scene1Transition_1`;
     }
   }
 }
 
 
-// creates the dialogue
+// following: generateDialogue()
 function createDialogue(name, sprite, textColor, sentence){
 
   let dialogue = {
@@ -87,8 +75,7 @@ function createDialogue(name, sprite, textColor, sentence){
   return dialogue;
 }
 
-
-//generates the dialogue from the array of dialogues
+//checks which color of text and sprite to display and adds the dialogue to the array
 function generateDialogue(dialogueData){
 
   for(let i = 0; i < dialogueData.length; i++){
@@ -138,6 +125,8 @@ function generateDialogue(dialogueData){
   if(currentdialogueNbr >= dialogueData.length){
     currentdialogueNbr = 0;
     dialogues = [];
+
+    //scene1 cutscene > inspection
     if(currentScene === `scene1`){
       currentState = `inspection`;
     }
@@ -160,11 +149,18 @@ function generateDialogue(dialogueData){
       //updates the display of the number of items investigated
       displayItemsLeft(itemChecklist.scene1Checklist);
     }
+
+    // scene1 breaking the remote part
+    if (currentScene ===`scene1Transition_1`){
+      currentScene = `scene1Transition_2`;
+      displayScene1();
+    }
   }
 
   displaydialogue();
 }
 
+//displays the dialogue
 function displaydialogue(){
 
   //dialoguebox

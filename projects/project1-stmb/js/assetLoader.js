@@ -37,6 +37,12 @@ let item_remote = {
   img:undefined
 }
 
+let item_remote_broken = {
+  x: 345,
+  y: 320,
+  img:undefined
+}
+
 let item_ac = {
   x: 230,
   y: 120,
@@ -93,6 +99,7 @@ function preload() {
 
   //items
   item_remote.img = loadImage('assets/images/item_remote.png');
+  item_remote_broken.img = loadImage('assets/images/item_remote_broken.png');
   item_ac.img = loadImage('assets/images/item_ac.png');
   item_penpen.img = loadImage('assets/images/item_penpen.png');
   item_pictureBoard.img = loadImage('assets/images/item_pictureBoard.png');
