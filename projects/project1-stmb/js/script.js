@@ -24,7 +24,6 @@ function draw() {
       currentItem = `acRemote`;
       if (mouseIsPressed){
         inItemDialogue = true;
-        updateItemDialogue();
       }
     }else if(distAc <=40
       && inItemDialogue === false
@@ -33,7 +32,6 @@ function draw() {
       currentItem = `ac`;
       if (mouseIsPressed){
         inItemDialogue = true;
-        updateItemDialogue();
       }
     }else if(distpenpen <= 30
       && inItemDialogue === false
@@ -42,7 +40,6 @@ function draw() {
       currentItem = `penpen`;
       if (mouseIsPressed){
         inItemDialogue = true;
-        updateItemDialogue();
       }
     }else if(distPictureBoard <= 40
       && inItemDialogue === false
@@ -51,7 +48,6 @@ function draw() {
       currentItem = `pictureBoard`;
       if (mouseIsPressed){
         inItemDialogue = true;
-        updateItemDialogue();
       }
     }else{
       cursor(ARROW);
