@@ -55,12 +55,10 @@ function displayScene1(){
 
   pop();
 
-  generateDialogue(cutsceneDialogues.scene1Dialogues);
-  currentdialogueNbr ++;
+  //quick delay fix
+  if(currentScene === `scene1`){
+    generateDialogue(cutsceneDialogues.scene1Dialogues);
+    currentdialogueNbr ++;
+  }
 
-}
-
-function playScene1Transition(){
-
-  generateDialogue(cutsceneDialogues.scene1TransitionDialogues_1);
 }

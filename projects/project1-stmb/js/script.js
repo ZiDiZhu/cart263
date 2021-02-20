@@ -59,13 +59,19 @@ function mousePressed() {
   //console.log(`${currentState}`);
   //click anywhere to start
   if(currentState === `title`){
-    displayScene1();
     currentScene = `scene1`;
-  }
-  //goes through dialogues
-  else if(currentState === `cutscene`){
-    generateDialogue(cutsceneDialogues.scene1Dialogues);
-    currentdialogueNbr ++;
+    displayScene1();
+  }else if(currentState === `cutscene`){
+    if (currentScene === `scene1`){
+      generateDialogue(cutsceneDialogues.scene1Dialogues);
+      currentdialogueNbr ++;
+    }else if (currentScene === `scene1Transition_1`){
+      generateDialogue(cutsceneDialogues.scene1TransitionDialogues_1);
+      currentdialogueNbr ++;
+    }else if(currentScene === `scene1Transition_2`){
+      generateDialogue(cutsceneDialogues.scene1TransitionDialogues_2);
+      currentdialogueNbr ++;
+    }
   }else if (currentState === `inspection`){
     updateItemDialogue();
   }

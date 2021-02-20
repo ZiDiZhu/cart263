@@ -93,5 +93,43 @@
       "sprite" : "haru2",
       "sentence": "...!"
     }
+  ],
+
+  "scene1TransitionDialogues_2": [
+    {
+      "chara": "Ishi",
+      "sprite" : "ishi2",
+      "sentence": "...HEY!"
+    },
+    {
+      "chara": "Niimi",
+      "sprite" : "niimi2",
+      "sentence": "Well good job! You guys broke it!"
+    },
+    {
+      "chara": "Ishi",
+      "sprite" : "ishi2",
+      "sentence": "No, it was you!"
+    },
+    {
+      "chara": "Soga",
+      "sprite" : "soga2",
+      "sentence": "You guys wrecked the remote completely!"
+    },
+    {
+      "chara": "Niimi",
+      "sprite" : "niimi2",
+      "sentence": "It's sooooooo unbearably hot in here!"
+    },
+    {
+      "chara": "Haru",
+      "sprite" : "haru1",
+      "sentence": "Yea, it's like a sauna in here. What should we do?"
+    },
+    {
+      "chara": "Ishi",
+      "sprite" : "ishi1",
+      "sentence": "Let's go outside to see if we can do something."
+    }
   ]
 }

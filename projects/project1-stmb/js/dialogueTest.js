@@ -48,13 +48,12 @@ function updateItemDialogue(){
   checkIfNextScene();
 }
 
-//checks if player has gone through all the dialogues
+//checks if player has investigated all items
 function checkIfNextScene (){
 
   if(currentScene === `scene1`){
     displayItemsLeft(itemChecklist.scene1Checklist);
     if(itemChecklist.scene1Checklist >=4){
-      playScene1Transition();
       currentState = `cutscene`;
       currentScene = `scene1Transition_1`;
     }
@@ -155,6 +154,7 @@ function generateDialogue(dialogueData){
       currentScene = `scene1Transition_2`;
       displayScene1();
     }
+
   }
 
   displaydialogue();
