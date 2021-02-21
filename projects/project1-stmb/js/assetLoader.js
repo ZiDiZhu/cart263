@@ -30,6 +30,9 @@ let chr_niimi_3;
 //environment art assets
 let sce_club_warm;
 
+//music and sounds
+let bgm_mystery;
+
 //items
 let item_remote = {
   x: 345,
@@ -103,4 +106,7 @@ function preload() {
   item_ac.img = loadImage('assets/images/item_ac.png');
   item_penpen.img = loadImage('assets/images/item_penpen.png');
   item_pictureBoard.img = loadImage('assets/images/item_pictureBoard.png');
+
+  //music
+  bgm_mystery = loadSound('assets/sounds/bgm_mystery.wav');
 }

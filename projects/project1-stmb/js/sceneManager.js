@@ -10,6 +10,7 @@ function setup() {
   currentScene = `opening`;
   currentState = `title`;
   displayOpeningScene();
+  bgm_mystery.loop();
 
 }
 

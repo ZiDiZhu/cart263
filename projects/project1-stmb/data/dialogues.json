@@ -43,7 +43,7 @@
     {
       "chara":"Inspection",
       "sprite" : "haru1",
-      "sentence": "Inspect the room by double clicking on item"
+      "sentence": "Inspect the room by clicking on item"
     }
   ],
 
