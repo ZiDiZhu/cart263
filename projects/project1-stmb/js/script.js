@@ -55,11 +55,12 @@ function draw() {
   }
 }
 
-function mousePressed() {
+function mouseClicked() {
   //console.log(`${currentState}`);
   //click anywhere to start
   if(currentState === `title`){
     currentScene = `scene1`;
+    bgm_mystery.loop();
     displayScene1();
   }else if(currentState === `cutscene`){
     if (currentScene === `scene1`){
@@ -70,6 +71,9 @@ function mousePressed() {
       currentdialogueNbr ++;
     }else if(currentScene === `scene1Transition_2`){
       generateDialogue(cutsceneDialogues.scene1TransitionDialogues_2);
+      currentdialogueNbr ++;
+    }else if (currentScene === `scene2`){
+      generateDialogue(cutsceneDialogues.scene2Dialogues);
       currentdialogueNbr ++;
     }
   }else if (currentState === `inspection`){

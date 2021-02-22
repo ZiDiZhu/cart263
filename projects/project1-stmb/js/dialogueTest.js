@@ -56,6 +56,8 @@ function checkIfNextScene (){
     if(itemChecklist.scene1Checklist >=4){
       currentState = `cutscene`;
       currentScene = `scene1Transition_1`;
+      generateDialogue(cutsceneDialogues.scene1TransitionDialogues_1);
+      currentdialogueNbr ++;
     }
   }
 }
@@ -153,6 +155,9 @@ function generateDialogue(dialogueData){
     if (currentScene ===`scene1Transition_1`){
       currentScene = `scene1Transition_2`;
       displayScene1();
+    }else if (currentScene === `scene1Transition_2`){
+      currentScene = `scene2`;
+      displayScene2();
     }
 
   }
@@ -165,7 +170,7 @@ function displaydialogue(){
 
   //dialoguebox
   push();
-  fill(120);
+  fill(40);
   rectMode(LEFT);
   rect(0,500,800,100);
   pop();

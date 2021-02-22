@@ -29,38 +29,53 @@ let chr_niimi_3;
 
 //environment art assets
 let sce_club_warm;
+let sce_yard;
 
 //music and sounds
 let bgm_mystery;
+let sfx_crack;
 
-//items
+//items - club room
 let item_remote = {
   x: 345,
   y: 320,
   img:undefined
 }
-
 let item_remote_broken = {
   x: 345,
   y: 320,
   img:undefined
 }
-
 let item_ac = {
   x: 230,
   y: 120,
   img:undefined
 }
-
 let item_penpen = {
   x: 420,
   y: 170,
   img:undefined
 }
-
 let item_pictureBoard = {
   x: 365,
   y: 240,
+  img:undefined
+}
+
+//items - yard
+let item_dump ={
+  x:450,
+  y:320,
+  img:undefined
+}
+let item_messageBoard ={
+  x:500,
+  y:200,
+  img:undefined
+}
+let item_kecha ={
+  x:300,
+  y:280,
   img:undefined
 }
 
@@ -100,6 +115,8 @@ function preload() {
 
   sce_club_warm = loadImage('assets/images/sce_club_warm.png');
 
+  sce_yard = loadImage('assets/images/sce_yard.png');
+
   //items
   item_remote.img = loadImage('assets/images/item_remote.png');
   item_remote_broken.img = loadImage('assets/images/item_remote_broken.png');
@@ -107,6 +124,12 @@ function preload() {
   item_penpen.img = loadImage('assets/images/item_penpen.png');
   item_pictureBoard.img = loadImage('assets/images/item_pictureBoard.png');
 
+  item_messageBoard.img = loadImage('assets/images/item_messageBoard.png');
+  item_dump.img = loadImage('assets/images/item_dump.png');
+  item_kecha.img = loadImage('assets/images/item_kecha.png');
+
   //music
   bgm_mystery = loadSound('assets/sounds/bgm_mystery.wav');
+  //sfx
+  sfx_crack = loadSound('assets/sounds/sfx_crack.wav');
 }
