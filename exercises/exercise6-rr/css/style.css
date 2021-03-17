@@ -4,3 +4,39 @@ Here is a description of any special CSS used.
 By default that's nothing.
 
 **********************************************/
+
+.default{
+  font-family: Courier, monospace;
+  width: 550px;
+  position: absolute;
+  text-align: left;
+  font-size: 20px;
+  top: 180px;
+  left: 150px;
+}
+
+.cthulhu{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  opacity: inherit;
+}
+
+.container {
+  position: absolute;
+  text-align: left;
+  top: 80px;
+  left: 10px;
+}
+
+/* Redacted elements need to be blanked out */
+.redacted {
+  background-color: black; /* Black background */
+  user-select: none; /* User can't select the redacted text to see it */
+}
+
+/* Revealed elements need to be highlighted because it's a disaster! */
+.revealed {
+  background-color: transparent; /* No background */
+  color: red; /* Emergency! */
+}
