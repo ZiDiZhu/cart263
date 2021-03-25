@@ -1,6 +1,8 @@
 /**
 Code Taker
 Zi Di
+
+this game could've also had the anagram mechanic but im too lazy to do it
 */
 
 "use strict";
