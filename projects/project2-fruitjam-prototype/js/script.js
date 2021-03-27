@@ -18,12 +18,16 @@ let button_piano;
 let button_string;
 
 function setup() {
-  createCanvas(800, 600);
+  createCanvas(windowWidth, windowHeight);
   background(200);
 
   button_drum = createButton('CHANGE DRUM');
   button_drum.position(100, 100);
   button_drum.mousePressed(changeDrum);
+
+  button_bass = createButton('CHANGE DRUM');
+  button_bass.position(100, 100);
+  button_bass.mousePressed(changeBass);
 }
 
 
@@ -31,7 +35,19 @@ function draw() {
 
 }
 
+//tried to use function with parameter for all instruments, didnt work aaaaaaaaaaa
+
 function changeDrum() {
+  drum[currentdrum].stop();
+  currentdrum ++;
+  if(currentdrum >= drum.length){
+    currentdrum = 0;
+  }
+  console.log(currentdrum);
+  drum[currentdrum].loop();
+}
+
+function changeBass() {
   drum[currentdrum].stop();
   currentdrum ++;
   if(currentdrum >= drum.length){
