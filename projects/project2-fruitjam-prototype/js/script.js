@@ -25,8 +25,8 @@ function setup() {
   button_drum.position(100, 100);
   button_drum.mousePressed(changeDrum);
 
-  button_bass = createButton('CHANGE DRUM');
-  button_bass.position(100, 100);
+  button_bass = createButton('CHANGE BASS');
+  button_bass.position(300, 100);
   button_bass.mousePressed(changeBass);
 }
 
@@ -48,11 +48,13 @@ function changeDrum() {
 }
 
 function changeBass() {
-  drum[currentdrum].stop();
-  currentdrum ++;
-  if(currentdrum >= drum.length){
-    currentdrum = 0;
+  bass[currentbass].stop();
+  drum[currentdrum].stop();//to sync up
+  currentbass ++;
+  if(currentbass >= bass.length){
+    currentbass = 0;
   }
-  console.log(currentdrum);
-  drum[currentdrum].loop();
+  console.log(currentbass);
+  bass[currentbass].loop();
+  drum[currentdrum].loop();//to sync
 }
