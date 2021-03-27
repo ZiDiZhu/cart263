@@ -58,7 +58,7 @@ function setup() {
   button_stop.mousePressed(turnAllOn);
 
   button_drum = createButton('CHANGE DRUM');
-  button_drum.position(100, 100);
+  button_drum.position(100, 200);
   button_drum.mousePressed(changeDrum);
 
   button_drum = createButton('DRUM ON/OFF');
@@ -66,7 +66,7 @@ function setup() {
   button_drum.mousePressed(toggleDrum);
 
   button_bass = createButton('CHANGE BASS');
-  button_bass.position(300, 100);
+  button_bass.position(300, 200);
   button_bass.mousePressed(changeBass);
 
   button_bass = createButton('BASS ON/OFF');
@@ -74,7 +74,7 @@ function setup() {
   button_bass.mousePressed(toggleBass);
 
   button_piano = createButton('CHANGE PIANO');
-  button_piano.position(500, 100);
+  button_piano.position(500, 200);
   button_piano.mousePressed(changePiano);
 
   button_piano = createButton('PIANO ON/OFF');
@@ -82,7 +82,7 @@ function setup() {
   button_piano.mousePressed(togglePiano);
 
   button_piano = createButton('CHANGE STRING');
-  button_piano.position(700, 100);
+  button_piano.position(700, 200);
   button_piano.mousePressed(changeString);
 
   button_piano = createButton('STRING ON/OFF');
