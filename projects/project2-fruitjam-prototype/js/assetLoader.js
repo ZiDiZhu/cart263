@@ -22,9 +22,9 @@ function preload() {
   bass[2] = loadSound('assets/sounds/bass3.wav');
 
   //piano
-  piano[0] = loadSound('assets/sounds/softpiano1.wav');
-  piano[1] = loadSound('assets/sounds/softpiano2.wav');
-  piano[2] = loadSound('assets/sounds/softpiano3.wav');
+  piano[0] = loadSound('assets/sounds/softPiano1.wav');
+  piano[1] = loadSound('assets/sounds/softPiano2.wav');
+  piano[2] = loadSound('assets/sounds/softPiano3.wav');
 
   //strings
   string[0] = loadSound('assets/sounds/string1.wav');
