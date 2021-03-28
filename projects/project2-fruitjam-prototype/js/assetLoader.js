@@ -23,4 +23,19 @@ function preload() {
   string.clip[1] = loadSound('assets/sounds/string2.wav');
   string.clip[2] = loadSound('assets/sounds/string3.wav');
 
+
+  //gifs
+
+  //drum melon
+  drum.avatar[0] = createImg('assets/images/melon.gif');
+
+  //bass banana
+  bass.avatar[0] = createImg('assets/images/banana.gif');
+
+  //piano berry
+  piano.avatar[0] = createImg('assets/images/berry.gif');
+
+  //string citrus
+  string.avatar[0] = createImg('assets/images/citrus.gif');
+
 }

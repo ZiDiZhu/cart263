@@ -6,6 +6,8 @@ Zi Di Zhu
 
 A musical toy
 having difficulty making functions with parameters
+
+commented tofix with things that need to be fixed
 */
 
 //change instrument button
@@ -17,6 +19,7 @@ let button_string;
 //instrument states
 let drum = {
   clip :[],
+  avatar: [], //depicted by a melon
   clipnbr: 0, //clipnumber
   isPlaying: false,
   volume: 1
@@ -24,13 +27,16 @@ let drum = {
 
 let bass = {
   clip:[],
+  avatar: [], //banana
   clipnbr: 0,
+  animnbr: 0,
   isPlaying: false,
   volume: 1
 }
 
 let piano = {
   clip:[],
+  avatar:[], //berry
   clipnbr: 0,
   isPlaying: false,
   volume: 1
@@ -38,6 +44,7 @@ let piano = {
 
 let string = {
   clip:[],
+  avatar: [],
   clipnbr: 0,
   isPlaying: false,
   volume: 1
@@ -88,6 +95,10 @@ function setup() {
   button_piano = createButton('STRING ON/OFF');
   button_piano.position(700, 140);
   button_piano.mousePressed(toggleString);
+
+
+  updateDisplay();
+
 }
 
 
@@ -95,7 +106,9 @@ function draw() {
   //background(200);
 }
 
-//tried to use function with parameter for all instruments, didnt work aaaaaaaaaaa
+
+//tofix
+//tried to use function with parameter for all instruments, didnt work
 
 function stopAll() {
   drum.clip[drum.clipnbr].stop();
@@ -110,8 +123,12 @@ function turnAllOn() {
   piano.isPlaying = true;
   string.isPlaying = true;
   playAll();
+  updateDisplay();
 }
 
+
+//tofix
+//change to parametered functions
 function playAll(){
   stopAll();
 
@@ -123,6 +140,8 @@ function playAll(){
     piano.clip[piano.clipnbr].loop();
   if(string.isPlaying)
     string.clip[string.clipnbr].loop();
+
+  updateDisplay();
 }
 
 // this does not workkkkk aaaaa
@@ -179,6 +198,8 @@ function changeString() {
   playAll();
 }
 
+//tofix
+//change all toggle to f w parameters
 function toggleDrum() {
   if(drum.isPlaying)
     drum.isPlaying = false;
