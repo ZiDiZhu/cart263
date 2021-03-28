@@ -5,7 +5,6 @@ Fruit Jam (Demo)
 Zi Di Zhu
 
 A musical toy
-having difficulty making functions with parameters
 
 commented tofix with things that need to be fixed
 */
@@ -15,11 +14,17 @@ let button_drum;
 let button_bass;
 let button_piano;
 let button_string;
+//toggleOnOff
+let button_drum_ON;
+let button_bass_ON;
+let button_piano_ON;
+let button_string_ON;
 
 //instrument states
 let drum = {
   clip :[],
   avatar: [], //depicted by a melon
+  x:100,
   clipnbr: 0, //clipnumber
   isPlaying: false,
   volume: 1
@@ -28,6 +33,7 @@ let drum = {
 let bass = {
   clip:[],
   avatar: [], //banana
+  x:300,
   clipnbr: 0,
   animnbr: 0,
   isPlaying: false,
@@ -37,6 +43,7 @@ let bass = {
 let piano = {
   clip:[],
   avatar:[], //berry
+  x:500,
   clipnbr: 0,
   isPlaying: false,
   volume: 1
@@ -45,6 +52,7 @@ let piano = {
 let string = {
   clip:[],
   avatar: [],
+  x:700,
   clipnbr: 0,
   isPlaying: false,
   volume: 1
@@ -60,6 +68,8 @@ function setup() {
   button_stop.position(600, 50);
   button_stop.mousePressed(stopAll);
 
+  //tofix
+  //its the same button as above???? but it works??????
   button_stop = createButton('PLAY ALL');
   button_stop.position(300, 50);
   button_stop.mousePressed(turnAllOn);
@@ -70,9 +80,9 @@ function setup() {
     changeClip(drum)
   });
 
-  button_drum = createButton('DRUM ON/OFF');
-  button_drum.position(100, 140);
-  button_drum.mousePressed(() => {
+  button_drum_ON = createButton('DRUM ON/OFF');
+  button_drum_ON.position(100, 140);
+  button_drum_ON.mousePressed(() => {
     toggleOnOff(drum)
   });
 
@@ -82,9 +92,9 @@ function setup() {
     changeClip(bass)
   });
 
-  button_bass = createButton('BASS ON/OFF');
-  button_bass.position(300, 140);
-  button_bass.mousePressed(() => {
+  button_bass_ON = createButton('BASS ON/OFF');
+  button_bass_ON.position(300, 140);
+  button_bass_ON.mousePressed(() => {
     toggleOnOff(bass)
   });
 
@@ -114,7 +124,6 @@ function setup() {
 
 
   updateDisplay();
-
 }
 
 
@@ -122,9 +131,6 @@ function draw() {
   //background(200);
 }
 
-
-//tofix
-//tried to use function with parameter for all instruments, didnt work
 
 function stopAll() {
   drum.clip[drum.clipnbr].stop();

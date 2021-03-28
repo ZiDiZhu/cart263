@@ -11,16 +11,18 @@ function updateDisplay() {
 
 
   //update animations
-  drum.avatar[0].position(100,300);
-  bass.avatar[0].position(300,300);
-  piano.avatar[0].position(500,350);
-  string.avatar[0].position(700,350);
+
+  updateAnim(drum);
+  updateAnim(bass);
+  updateAnim(piano);
+  updateAnim(string);
 
 
-  //tofix
-  //parameters
-  if(drum.isPlaying)
-    drum.avatar[0].position(100,300);
+}
+
+function updateAnim(instrument) {
+  if(instrument.isPlaying)
+    instrument.avatar[0].position(instrument.x,300);
   else
-    drum.avatar[0].position(100,10000);  //temporary solution to make it insivible, tofix
+    instrument.avatar[0].position(100,10000);  //temporary solution to make it insivible, tofix
 }
