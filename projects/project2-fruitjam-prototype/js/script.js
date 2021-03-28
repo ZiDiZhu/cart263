@@ -66,35 +66,51 @@ function setup() {
 
   button_drum = createButton('CHANGE DRUM');
   button_drum.position(100, 200);
-  button_drum.mousePressed(changeDrum);
+  button_drum.mousePressed(() => {
+    changeClip(drum)
+  });
 
   button_drum = createButton('DRUM ON/OFF');
   button_drum.position(100, 140);
-  button_drum.mousePressed(toggleDrum);
+  button_drum.mousePressed(() => {
+    toggleOnOff(drum)
+  });
 
   button_bass = createButton('CHANGE BASS');
   button_bass.position(300, 200);
-  button_bass.mousePressed(changeBass);
+  button_bass.mousePressed(() => {
+    changeClip(bass)
+  });
 
   button_bass = createButton('BASS ON/OFF');
   button_bass.position(300, 140);
-  button_bass.mousePressed(toggleBass);
+  button_bass.mousePressed(() => {
+    toggleOnOff(bass)
+  });
 
   button_piano = createButton('CHANGE PIANO');
   button_piano.position(500, 200);
-  button_piano.mousePressed(changePiano);
+  button_piano.mousePressed(() => {
+    changeClip(piano)
+  });
 
   button_piano = createButton('PIANO ON/OFF');
   button_piano.position(500, 140);
-  button_piano.mousePressed(togglePiano);
+  button_piano.mousePressed(() => {
+    toggleOnOff(piano)
+  });
 
   button_piano = createButton('CHANGE STRING');
   button_piano.position(700, 200);
-  button_piano.mousePressed(changeString);
+  button_piano.mousePressed(() => {
+    changeClip(string)
+  });
 
   button_piano = createButton('STRING ON/OFF');
   button_piano.position(700, 140);
-  button_piano.mousePressed(toggleString);
+  button_piano.mousePressed(() => {
+    toggleOnOff(string)
+  });
 
 
   updateDisplay();
@@ -144,94 +160,20 @@ function playAll(){
   updateDisplay();
 }
 
-// this does not workkkkk aaaaa
-// function changeClip(instrument) {
-//   //stopAll();
-//   instrument.clipnbr++;
-//   if(instrument.clipnbr >= instrument.clip.length){
-//     instrument.clipnbr = 0;
-//   }
-//   instrument.clip[instrument.clipnbr].loop();
-// }
-
-function changeDrum() {
+function changeClip(instrument) {
   stopAll();
-  drum.clipnbr ++;
-  if(drum.clipnbr >= drum.clip.length){
-    drum.clipnbr = 0;
+  instrument.clipnbr++;
+  if(instrument.clipnbr >= instrument.clip.length){
+    instrument.clipnbr = 0;
   }
-  console.log('drum' + drum.clipnbr);
   updateDisplay();
   playAll();
 }
 
-function changeBass() {
-  stopAll();
-  bass.clipnbr ++;
-  if(bass.clipnbr >= bass.clip.length){
-    bass.clipnbr = 0;
-  }
-  console.log('bass' + bass.clipnbr);
-  updateDisplay();
-  playAll();
-}
-
-function changePiano() {
-  stopAll();
-  piano.clipnbr ++;
-  if(piano.clipnbr >= piano.clip.length){
-    piano.clipnbr = 0;
-  }
-  console.log('piano' + piano.clipnbr);
-  updateDisplay();
-  playAll();
-}
-
-function changeString() {
-  stopAll();
-  string.clipnbr ++;
-  if(string.clipnbr >= string.clip.length){
-    string.clipnbr = 0;
-  }
-  console.log('string' + string.clipnbr);
-  updateDisplay();
-  playAll();
-}
-
-//tofix
-//change all toggle to f w parameters
-function toggleDrum() {
-  if(drum.isPlaying)
-    drum.isPlaying = false;
+function toggleOnOff(instrument) {
+  if(instrument.isPlaying)
+    instrument.isPlaying = false;
   else
-    drum.isPlaying = true;
-
-  playAll();
-}
-
-function toggleBass() {
-  if(bass.isPlaying)
-    bass.isPlaying = false;
-  else
-    bass.isPlaying = true;
-
-  playAll();
-}
-
-function togglePiano() {
-  if(piano.isPlaying)
-    piano.isPlaying = false;
-  else
-    piano.isPlaying = true;
-
-  playAll();
-}
-
-function toggleString() {
-  if(string.isPlaying)
-    string.isPlaying = false;
-  else
-    string.isPlaying = true;
-
+    instrument.isPlaying = true;
   playAll();
 }
