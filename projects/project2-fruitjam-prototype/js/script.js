@@ -7,6 +7,8 @@ Zi Di Zhu
 A musical toy
 
 commented tofix with things that need to be fixed
+
+also i want to change to not replaying clips from the start to resume playing when switch
 */
 
 //change instrument button
@@ -137,6 +139,14 @@ function stopAll() {
   bass.clip[bass.clipnbr].stop();
   piano.clip[piano.clipnbr].stop();
   string.clip[string.clipnbr].stop();
+
+  //tofix
+  //this breaks the program????????
+  // drum.isPlaying = false;
+  // bass.isPlaying = false;
+  // piano.isPlaying = false;
+  // string.isPlaying = false;
+  updateDisplay();
 }
 
 function turnAllOn() {

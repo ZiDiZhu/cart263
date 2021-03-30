@@ -17,7 +17,6 @@ function updateDisplay() {
   updateAnim(piano);
   updateAnim(string);
 
-
 }
 
 function updateAnim(instrument) {
