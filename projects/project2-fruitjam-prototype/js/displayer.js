@@ -20,8 +20,12 @@ function updateDisplay() {
 }
 
 function updateAnim(instrument) {
-  if(instrument.isPlaying)
+  if(instrument.isPlaying){
+    instrument.avatar[1].position(instrument.x,300);
+    instrument.avatar[0].position(100,10000);
+  }
+  else{
     instrument.avatar[0].position(instrument.x,300);
-  else
-    instrument.avatar[0].position(100,10000);  //temporary solution to make it insivible, tofix
+    instrument.avatar[1].position(100,10000);  //temporary solution to make it insivible, tofix
+  }
 }

@@ -24,7 +24,7 @@ let button_string_ON;
 
 //instrument states
 let drum = {
-  clip :[],
+  clip :[],//add pumpkinClips for pumpkin?
   avatar: [], //depicted by a melon
   x:100,
   clipnbr: 0, //clipnumber
@@ -178,6 +178,7 @@ function playAll(){
 
 function changeClip(instrument) {
   stopAll();
+  //toFix: add the clips in!
   instrument.clipnbr++;
   if(instrument.clipnbr >= instrument.clip.length){
     instrument.clipnbr = 0;

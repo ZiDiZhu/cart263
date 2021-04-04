@@ -26,16 +26,30 @@ function preload() {
 
   //gifs
 
-  //drum melon
-  drum.avatar[0] = createImg('assets/images/melon.gif');
+  //drum watermelon
+  drum.avatar[1] = createImg('assets/images/melon.gif');
 
   //bass banana
-  bass.avatar[0] = createImg('assets/images/banana.gif');
+  bass.avatar[1] = createImg('assets/images/banana.gif');
 
   //piano berry
-  piano.avatar[0] = createImg('assets/images/berry.gif');
+  piano.avatar[1] = createImg('assets/images/berry.gif');
 
   //string citrus
-  string.avatar[0] = createImg('assets/images/citrus.gif');
+  string.avatar[1] = createImg('assets/images/citrus.gif');
+
+
+  //stills images
+  drum.avatar[0] = createImg('assets/png/melon.png');
+
+  //bass banana
+  bass.avatar[0] = createImg('assets/png/banana.png');
+
+  //piano berry
+  piano.avatar[0] = createImg('assets/png/berry.png');
+
+  //string citrus
+  string.avatar[0] = createImg('assets/png/citrus.png');
+
 
 }
