@@ -61,6 +61,7 @@ let string = {
 }
 
 let button_stop;
+let button_playall;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -68,13 +69,12 @@ function setup() {
 
   button_stop = createButton('STOP ALL');
   button_stop.position(600, 50);
-  button_stop.mousePressed(stopAll);
+  button_stop.mousePressed(turnAllOff);
 
   //tofix
-  //its the same button as above???? but it works??????
-  button_stop = createButton('PLAY ALL');
-  button_stop.position(300, 50);
-  button_stop.mousePressed(turnAllOn);
+  button_playall = createButton('PLAY ALL');
+  button_playall.position(300, 50);
+  button_playall.mousePressed(turnAllOn);
 
   button_drum = createButton('CHANGE DRUM');
   button_drum.position(100, 200);
@@ -106,21 +106,21 @@ function setup() {
     changeClip(piano)
   });
 
-  button_piano = createButton('PIANO ON/OFF');
-  button_piano.position(500, 140);
-  button_piano.mousePressed(() => {
+  button_piano_ON = createButton('PIANO ON/OFF');
+  button_piano_ON.position(500, 140);
+  button_piano_ON.mousePressed(() => {
     toggleOnOff(piano)
   });
 
-  button_piano = createButton('CHANGE STRING');
-  button_piano.position(700, 200);
-  button_piano.mousePressed(() => {
+  button_string = createButton('CHANGE STRING');
+  button_string.position(700, 200);
+  button_string.mousePressed(() => {
     changeClip(string)
   });
 
-  button_piano = createButton('STRING ON/OFF');
-  button_piano.position(700, 140);
-  button_piano.mousePressed(() => {
+  button_string_ON = createButton('STRING ON/OFF');
+  button_string_ON.position(700, 140);
+  button_string_ON.mousePressed(() => {
     toggleOnOff(string)
   });
 
@@ -135,18 +135,21 @@ function draw() {
 
 
 function stopAll() {
+
   drum.clip[drum.clipnbr].stop();
   bass.clip[bass.clipnbr].stop();
   piano.clip[piano.clipnbr].stop();
   string.clip[string.clipnbr].stop();
 
-  //tofix
-  //this breaks the program????????
-  // drum.isPlaying = false;
-  // bass.isPlaying = false;
-  // piano.isPlaying = false;
-  // string.isPlaying = false;
   updateDisplay();
+}
+
+function turnAllOff() {
+  drum.isPlaying = false;
+  bass.isPlaying = false;
+  piano.isPlaying = false;
+  string.isPlaying = false;
+  stopAll();
 }
 
 function turnAllOn() {
@@ -155,7 +158,6 @@ function turnAllOn() {
   piano.isPlaying = true;
   string.isPlaying = true;
   playAll();
-  updateDisplay();
 }
 
 
@@ -183,7 +185,6 @@ function changeClip(instrument) {
   if(instrument.clipnbr >= instrument.clip.length){
     instrument.clipnbr = 0;
   }
-  updateDisplay();
   playAll();
 }
 

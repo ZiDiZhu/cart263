@@ -26,6 +26,8 @@ function preload() {
 
   //gifs
 
+  //currently, 1 is animated and 0 is still
+
   //drum watermelon
   drum.avatar[1] = createImg('assets/images/melon.gif');
 
