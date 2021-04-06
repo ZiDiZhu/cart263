@@ -8,6 +8,11 @@ function preload() {
   drum.clip[1] = loadSound('assets/sounds/808drum2.wav');
   drum.clip[2] = loadSound('assets/sounds/808drum3.wav');
 
+  //drummer 2 test
+  pumpkin.clip[0] = loadSound('assets/sounds/drum_pumpkin1.wav');
+  pumpkin.clip[1] = loadSound('assets/sounds/drum_pumpkin2.wav');
+  pumpkin.clip[2] = loadSound('assets/sounds/drum_pumpkin3.wav');
+
   //bass
   bass.clip[0] = loadSound('assets/sounds/bass1.wav');
   bass.clip[1] = loadSound('assets/sounds/bass2.wav');
@@ -29,7 +34,9 @@ function preload() {
   //currently, 1 is animated and 0 is still
 
   //drum watermelon
-  drum.avatar[1] = createImg('assets/images/melon.gif');
+  drum.avatar[1] = createImg('assets/gif/drum_melon1.gif');
+
+  //pumpkin.avatar[1] = createImg('assets/png/drum_pumpkin.png');
 
   //bass banana
   bass.avatar[1] = createImg('assets/images/banana.gif');
@@ -43,6 +50,8 @@ function preload() {
 
   //stills images
   drum.avatar[0] = createImg('assets/png/melon.png');
+
+  //pumpkin.avatar[0] = createImg('assets/png/drum_pumpkin.png');
 
   //bass banana
   bass.avatar[0] = createImg('assets/png/banana.png');

@@ -9,11 +9,24 @@ let button_bass_ON;
 let button_piano_ON;
 let button_string_ON;
 
+//change sound of instrument
+let button_changesound_drum;
+
+
 let button_stop;
 let button_playall;
 
 //instrument states
 let drum = {
+  clip :[],//add pumpkinClips for pumpkin?
+  avatar: [], //depicted by a melon
+  x:100,
+  clipnbr: 0, //clipnumber
+  isPlaying: false,
+  volume: 1
+}
+
+let pumpkin = {
   clip :[],//add pumpkinClips for pumpkin?
   avatar: [], //depicted by a melon
   x:100,
@@ -111,6 +124,12 @@ function setup() {
     toggleOnOff(string)
   });
 
+  //test- change drummer
+  button_changesound_drum = createButton('CHANGE DRUMMER');
+  button_changesound_drum.position(100, 40);
+  button_changesound_drum.mousePressed(() => {
+    toggleOnOff(drum)
+  });
 
   updateDisplay();
 }
