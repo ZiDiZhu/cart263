@@ -34,7 +34,7 @@ function preload() {
   //currently, 1 is animated and 0 is still
 
   //drum watermelon
-  drum.avatar[1] = createImg('assets/gif/drum_melon1.gif');
+  drum.avatar[1] = createImg('assets/gif/melon2.gif');
 
   //pumpkin.avatar[1] = createImg('assets/png/drum_pumpkin.png');
 
