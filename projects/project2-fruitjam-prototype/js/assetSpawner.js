@@ -65,7 +65,6 @@ let string = {
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background(200);
 
   button_stop = createButton('STOP ALL');
   button_stop.position(600, 50);
@@ -128,8 +127,6 @@ function setup() {
   button_changesound_drum = createButton('CHANGE DRUMMER');
   button_changesound_drum.position(100, 40);
   button_changesound_drum.mousePressed(() => {
-    toggleOnOff(drum)
+    changeSound(drum);
   });
-
-  updateDisplay();
 }

@@ -13,7 +13,15 @@ also i want to change to not replaying clips from the start to resume playing wh
 
 
 function draw() {
-  //background(200);
+  background(200);
+  //updateAnim(drum);
+  updateAnim(drum);
+  updateAnim(bass);
+  updateAnim(piano);
+  updateAnim(string);
+
+
+  updateDisplay();
 }
 
 
@@ -24,7 +32,7 @@ function stopAll() {
   piano.clip[piano.clipnbr].stop();
   string.clip[string.clipnbr].stop();
 
-  updateDisplay();
+  //updateDisplay();
 }
 
 function turnAllOff() {
@@ -49,10 +57,14 @@ function turnAllOn() {
 function playAll(){
   stopAll();
 
-  if(drum.isPlaying)
+  if(drum.isPlaying){
+    resetGif(drum);
     drum.clip[drum.clipnbr].loop();
-  if(bass.isPlaying)
+  }
+  if(bass.isPlaying){
+    resetGif(bass);
     bass.clip[bass.clipnbr].loop();
+  }
   if(piano.isPlaying)
     piano.clip[piano.clipnbr].loop();
   if(string.isPlaying)
@@ -76,5 +88,11 @@ function toggleOnOff(instrument) {
     instrument.isPlaying = false;
   else
     instrument.isPlaying = true;
+  playAll();
+}
+
+function changeSound(instrument) {
+  drum.clip.length = [];
+  drum.clip.push.apply(drum.clip,pumpkin.clip);
   playAll();
 }
