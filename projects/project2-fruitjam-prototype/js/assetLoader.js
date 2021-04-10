@@ -4,9 +4,9 @@ function preload() {
   //sounds
 
   //drums
-  drum.clip[0] = loadSound('assets/sounds/808drum1.wav');
-  drum.clip[1] = loadSound('assets/sounds/808drum2.wav');
-  drum.clip[2] = loadSound('assets/sounds/808drum3.wav');
+  melon.clip[0] = loadSound('assets/sounds/808drum1.wav');
+  melon.clip[1] = loadSound('assets/sounds/808drum2.wav');
+  melon.clip[2] = loadSound('assets/sounds/808drum3.wav');
 
   //drummer 2 test
   pumpkin.clip[0] = loadSound('assets/sounds/drum_pumpkin1.wav');
@@ -29,47 +29,37 @@ function preload() {
   string.clip[2] = loadSound('assets/sounds/string3.wav');
 
 
-  //gifs
-
-  //currently, 1 is animated and 0 is still
+  //visuals
+  //1-3 are animated and 0 is still image
 
   //drum watermelon
-  drum.avatar[1] = loadImage('assets/gif/melon1.gif');
-  drum.avatar[2] = loadImage('assets/gif/melon2.gif');
-  drum.avatar[3] = loadImage('assets/gif/melon3.gif');
-
-  //pumpkin
-  pumpkin.avatar[1] = loadImage('assets/png/drum_pumpkin.png');
-  pumpkin.avatar[2] = loadImage('assets/png/drum_pumpkin.png');
-  pumpkin.avatar[3] = loadImage('assets/png/drum_pumpkin.png');
-
-  //bass banana
-  bass.avatar[1] = loadImage('assets/images/banana.gif');
-  bass.avatar[2] = loadImage('assets/images/banana.gif');
-  bass.avatar[3] = loadImage('assets/images/banana.gif');
-
-  //piano berry
-  piano.avatar[1] = loadImage('assets/gif/berry1.gif');
-  piano.avatar[2] = loadImage('assets/gif/berry2.gif');
-  piano.avatar[3] = loadImage('assets/gif/berry3.gif');
-
-  //string citrus
-  string.avatar[1] = loadImage('assets/images/citrus.gif');
-  string.avatar[2] = loadImage('assets/images/citrus.gif');
-  string.avatar[3] = loadImage('assets/images/citrus.gif');
-
-  //stills images
-  drum.avatar[0] = loadImage('assets/png/melon.png');
-
+  melon.avatar[0] = loadImage('assets/png/melon.png');
+  melon.avatar[1] = loadImage('assets/gif/melon1.gif');
+  melon.avatar[2] = loadImage('assets/gif/melon2.gif');
+  melon.avatar[3] = loadImage('assets/gif/melon3.gif');
+  //drum pumpkin
   pumpkin.avatar[0] = loadImage('assets/png/drum_pumpkin.png');
+  pumpkin.avatar[1] = loadImage('assets/gif/drum_pumpkin1.gif');
+  pumpkin.avatar[2] = loadImage('assets/gif/drum_pumpkin2.gif');
+  pumpkin.avatar[3] = loadImage('assets/gif/drum_pumpkin3.gif');
 
   //bass banana
-  bass.avatar[0] = loadImage('assets/png/banana.png');
+  banana.avatar[0] = loadImage('assets/png/banana.png');
+  banana.avatar[1] = loadImage('assets/images/banana.gif');
+  banana.avatar[2] = loadImage('assets/images/banana.gif');
+  banana.avatar[3] = loadImage('assets/images/banana.gif');
 
   //piano berry
-  piano.avatar[0] = loadImage('assets/png/berry.png');
+  strawbry.avatar[0] = loadImage('assets/png/berry.png');
+  strawbry.avatar[1] = loadImage('assets/gif/berry1.gif');
+  strawbry.avatar[2] = loadImage('assets/gif/berry2.gif');
+  strawbry.avatar[3] = loadImage('assets/gif/berry3.gif');
 
-  //string citrus
-  string.avatar[0] = loadImage('assets/png/citrus.png');
+  //string orange
+  orange.avatar[0] = loadImage('assets/png/citrus.png');
+  orange.avatar[1] = loadImage('assets/images/citrus.gif');
+  orange.avatar[2] = loadImage('assets/images/citrus.gif');
+  orange.avatar[3] = loadImage('assets/images/citrus.gif');
+
 
 }

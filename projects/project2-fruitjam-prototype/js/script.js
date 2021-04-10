@@ -11,6 +11,12 @@ commented tofix with things that need to be fixed
 also i want to change to not replaying clips from the start to resume playing when switch
 */
 
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+
+  setupButtons();
+  setupInstruments();
+}
 
 function draw() {
   background(200);
@@ -20,21 +26,19 @@ function draw() {
   updateAnim(piano);
   updateAnim(string);
 
-
   updateDisplay();
 }
 
-
+//stop all loops
 function stopAll() {
 
   drum.clip[drum.clipnbr].stop();
   bass.clip[bass.clipnbr].stop();
   piano.clip[piano.clipnbr].stop();
   string.clip[string.clipnbr].stop();
-
-  //updateDisplay();
 }
 
+//switch all instruments.isPlaying to false
 function turnAllOff() {
   drum.isPlaying = false;
   bass.isPlaying = false;
@@ -43,6 +47,7 @@ function turnAllOff() {
   stopAll();
 }
 
+//switch all instruments.isPlaying to true
 function turnAllOn() {
   drum.isPlaying = true;
   bass.isPlaying = true;
@@ -50,7 +55,6 @@ function turnAllOn() {
   string.isPlaying = true;
   playAll();
 }
-
 
 //tofix
 //change to parametered functions
@@ -73,9 +77,10 @@ function playAll(){
   updateDisplay();
 }
 
+//change the clip of the instrument
 function changeClip(instrument) {
   stopAll();
-  //toFix: add the clips in!
+
   instrument.clipnbr++;
   if(instrument.clipnbr >= instrument.clip.length){
     instrument.clipnbr = 0;
@@ -83,6 +88,7 @@ function changeClip(instrument) {
   playAll();
 }
 
+//turn instrument on or off
 function toggleOnOff(instrument) {
   if(instrument.isPlaying)
     instrument.isPlaying = false;
@@ -91,8 +97,12 @@ function toggleOnOff(instrument) {
   playAll();
 }
 
+//change the fruit
 function changeSound(instrument) {
 
+  stopAll();
+
+  //change sound of drum
   if(instrument === drum){
     drum.clip.length = [];
     drum.avatar.length = [];
@@ -102,12 +112,24 @@ function changeSound(instrument) {
       drum.avatar.push.apply(drum.avatar,pumpkin.avatar);
       drum.sound = `pumpkin`;
     }else if (drum.sound === `pumpkin`){
-      drum.clip.push.apply(drum.clip,pumpkin.clip);
-      drum.avatar.push.apply(drum.avatar,pumpkin.avatar);
-      drum.sound = `pumpkin`;
+      drum.clip.push.apply(drum.clip,melon.clip);
+      drum.avatar.push.apply(drum.avatar,melon.avatar);
+      drum.sound = `melon`;
     }
   }
+
+  //change the sound of bass
   else if (instrument === bass){
+
+  }
+
+  //change the sound of piano
+  else if (instrument === piano){
+
+  }
+
+  //change the sound of string
+  else if (instrument === string){
 
   }
 
