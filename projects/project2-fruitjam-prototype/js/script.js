@@ -92,7 +92,24 @@ function toggleOnOff(instrument) {
 }
 
 function changeSound(instrument) {
-  drum.clip.length = [];
-  drum.clip.push.apply(drum.clip,pumpkin.clip);
+
+  if(instrument === drum){
+    drum.clip.length = [];
+    drum.avatar.length = [];
+    if(drum.sound ===`melon`){
+      //replace clips
+      drum.clip.push.apply(drum.clip,pumpkin.clip);
+      drum.avatar.push.apply(drum.avatar,pumpkin.avatar);
+      drum.sound = `pumpkin`;
+    }else if (drum.sound === `pumpkin`){
+      drum.clip.push.apply(drum.clip,pumpkin.clip);
+      drum.avatar.push.apply(drum.avatar,pumpkin.avatar);
+      drum.sound = `pumpkin`;
+    }
+  }
+  else if (instrument === bass){
+
+  }
+
   playAll();
 }

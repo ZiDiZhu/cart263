@@ -18,12 +18,18 @@ let button_playall;
 
 //instrument states
 let drum = {
+  sound : `melon`, //pumpkin
   clip :[],//add pumpkinClips for pumpkin?
   avatar: [], //depicted by a melon
   x:100,
   clipnbr: 0, //clipnumber
   isPlaying: false,
   volume: 1
+}
+
+let melon = {
+  clip :[],//add pumpkinClips for pumpkin?
+  avatar: [], //depicted by a melon
 }
 
 let pumpkin = {
