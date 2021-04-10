@@ -11,7 +11,9 @@ let button_string_ON;
 
 //change sound of instrument
 let button_changesound_drum;
-
+let button_changesound_bass;
+let button_changesound_piano;
+let button_changesound_string;
 
 let button_stop;
 let button_playall;
@@ -24,64 +26,70 @@ let drum = {
   sound : `melon`, //pumpkin
   clip :[],//add pumpkinClips for pumpkin?
   avatar: [], //depicted by a melon
-  x:100,
+  x:400,
+  y:120,
   clipnbr: 0, //clipnumber
   isPlaying: false,
 }
 //drummers
 let melon = {
 
-  clip :[], //add pumpkinClips for pumpkin?
-  avatar: [], //depicted by a melon
+  clip :[],
+  avatar: [],
 }
 let pumpkin = {
-  clip :[],//add pumpkinClips for pumpkin?
-  avatar: [], //depicted by a melon
+  clip :[],
+  avatar: [],
 }
 
 //bass
 let bass = {
   sound: `banana`, //avocado
   clip:[],
-  avatar: [], //banana
+  avatar: [],
   x:300,
+  y:150,
   clipnbr: 0,
   isPlaying: false,
 }
 //bassists
 let banana = {
-  clip :[],//add pumpkinClips for pumpkin?
-  avatar: [], //depicted by a melon
+  clip :[],
+  avatar: [],
 }
 let avocado = {
-  clip :[],//add pumpkinClips for pumpkin?
-  avatar: [], //depicted by a melon
+  clip :[],
+  avatar: [],
 }
 
 //piano
 let piano = {
+  sound: `strawbry`, //bluebry
   clip:[],
   avatar:[], //berry
-  x:500,
+  x:540,
+  y:220,
   clipnbr: 0,
   isPlaying: false,
   volume: 1
 }
 //pianists
 let strawbry = {
-  clip :[],//add pumpkinClips for pumpkin?
-  avatar: [], //depicted by a melon
+  clip :[],
+  avatar: [],
 }
 let bluebry = {
-  clip :[],//add pumpkinClips for pumpkin?
-  avatar: [], //depicted by a melon
+  clip :[],
+  avatar: [],
 }
 
 //string
 let string = {
+  sound: `orange`, //lime
   clip:[],
   avatar: [],
-  x:700,
+  x:400,
+  y:250,
   clipnbr: 0,
   isPlaying: false,
   volume: 1
@@ -95,6 +103,9 @@ let lime = {
   clip :[],
   avatar: [],
 }
+
+//environment assets
+let bg_box;
 
 //create buttons
 //and assign functions to buttons
@@ -156,11 +167,29 @@ function setupButtons() {
     toggleOnOff(string)
   });
 
-  //test- change drummer
+  //change drummer
   button_changesound_drum = createButton('CHANGE DRUMMER');
   button_changesound_drum.position(100, 440);
   button_changesound_drum.mousePressed(() => {
     changeSound(drum);
+  });
+  //change bassist
+  button_changesound_bass = createButton('CHANGE BASSIST');
+  button_changesound_bass.position(300, 440);
+  button_changesound_bass.mousePressed(() => {
+    changeSound(bass);
+  });
+  //change pianist
+  button_changesound_piano = createButton('CHANGE PIANO');
+  button_changesound_piano.position(500, 440);
+  button_changesound_piano.mousePressed(() => {
+    changeSound(piano);
+  });
+  //change pianist
+  button_changesound_string = createButton('CHANGE STRING');
+  button_changesound_string.position(700, 440);
+  button_changesound_string.mousePressed(() => {
+    changeSound(string);
   });
 }
 

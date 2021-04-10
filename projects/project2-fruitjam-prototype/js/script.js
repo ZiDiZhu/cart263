@@ -20,13 +20,13 @@ function setup() {
 
 function draw() {
   background(200);
-  //updateAnim(drum);
+
+  updateDisplay();
+
   updateAnim(drum);
   updateAnim(bass);
   updateAnim(piano);
   updateAnim(string);
-
-  updateDisplay();
 }
 
 //stop all loops
@@ -101,36 +101,67 @@ function toggleOnOff(instrument) {
 function changeSound(instrument) {
 
   stopAll();
+  instrument.clip.length = [];
+  instrument.avatar.length = [];
 
   //change sound of drum
   if(instrument === drum){
-    drum.clip.length = [];
-    drum.avatar.length = [];
-    if(drum.sound ===`melon`){
+
+    if(instrument.sound ===`melon`){
       //replace clips
-      drum.clip.push.apply(drum.clip,pumpkin.clip);
-      drum.avatar.push.apply(drum.avatar,pumpkin.avatar);
-      drum.sound = `pumpkin`;
+      instrument.clip.push.apply(instrument.clip,pumpkin.clip);
+      instrument.avatar.push.apply(instrument.avatar,pumpkin.avatar);
+      instrument.sound = `pumpkin`;
     }else if (drum.sound === `pumpkin`){
-      drum.clip.push.apply(drum.clip,melon.clip);
-      drum.avatar.push.apply(drum.avatar,melon.avatar);
-      drum.sound = `melon`;
+      instrument.clip.push.apply(instrument.clip,melon.clip);
+      instrument.avatar.push.apply(instrument.avatar,melon.avatar);
+      instrument.sound = `melon`;
     }
   }
 
   //change the sound of bass
   else if (instrument === bass){
 
+    if(instrument.sound ===`banana`){
+      //replace clips
+      instrument.clip.push.apply(instrument.clip,avocado.clip);
+      instrument.avatar.push.apply(instrument.avatar,avocado.avatar);
+      instrument.sound = `avocado`;
+    }else if (drum.sound === `avocado`){
+      instrument.clip.push.apply(instrument.clip,banana.clip);
+      instrument.avatar.push.apply(instrument.avatar,banana.avatar);
+      instrument.sound = `banana`;
+    }
   }
 
   //change the sound of piano
   else if (instrument === piano){
 
+    if(instrument.sound ===`strawbry`){
+      //replace clips
+      instrument.clip.push.apply(instrument.clip,bluebry.clip);
+      instrument.avatar.push.apply(instrument.avatar,bluebry.avatar);
+      instrument.sound = `bluebry`;
+    }else if (drum.sound === `bluebry`){
+      instrument.clip.push.apply(instrument.clip,strawbry.clip);
+      instrument.avatar.push.apply(instrument.avatar,strawbry.avatar);
+      instrument.sound = `strawbry`;
+    }
   }
 
   //change the sound of string
   else if (instrument === string){
 
+    if(instrument.sound ===`orange`){
+      //replace clips
+      instrument.clip.push.apply(instrument.clip,lime.clip);
+      instrument.avatar.push.apply(instrument.avatar,lime.avatar);
+      instrument.sound = `lime`;
+    }else if (drum.sound === `lime`){
+      instrument.clip.push.apply(instrument.clip,orange.clip);
+      instrument.avatar.push.apply(instrument.avatar,orange.avatar);
+      instrument.sound = `orange`;
+    }
   }
 
   playAll();
