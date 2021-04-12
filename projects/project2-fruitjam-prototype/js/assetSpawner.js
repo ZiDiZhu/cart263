@@ -29,17 +29,17 @@ let drum = {
   x:400,
   y:120,
   clipnbr: 0, //clipnumber
-  isPlaying: false,
+  isPlaying: false
 }
 //drummers
 let melon = {
 
   clip :[],
-  avatar: [],
+  avatar: []
 }
 let pumpkin = {
   clip :[],
-  avatar: [],
+  avatar: []
 }
 
 //bass
@@ -50,16 +50,16 @@ let bass = {
   x:300,
   y:150,
   clipnbr: 0,
-  isPlaying: false,
+  isPlaying: false
 }
 //bassists
 let banana = {
   clip :[],
-  avatar: [],
+  avatar: []
 }
 let avocado = {
   clip :[],
-  avatar: [],
+  avatar: []
 }
 
 //piano
@@ -76,11 +76,11 @@ let piano = {
 //pianists
 let strawbry = {
   clip :[],
-  avatar: [],
+  avatar: []
 }
 let bluebry = {
   clip :[],
-  avatar: [],
+  avatar: []
 }
 
 //string
@@ -97,7 +97,7 @@ let string = {
 //string players
 let orange = {
   clip :[],
-  avatar: [],
+  avatar: []
 }
 let lime = {
   clip :[],

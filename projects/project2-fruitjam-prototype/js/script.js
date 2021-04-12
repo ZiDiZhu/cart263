@@ -9,6 +9,9 @@ A musical toy
 commented tofix with things that need to be fixed
 
 also i want to change to not replaying clips from the start to resume playing when switch
+
+TODO: ADD ALL MUSIC CLIPS IN!!!!
+
 */
 
 function setup() {
@@ -101,6 +104,8 @@ function toggleOnOff(instrument) {
 function changeSound(instrument) {
 
   stopAll();
+  console.log
+
   instrument.clip.length = [];
   instrument.avatar.length = [];
 
@@ -112,7 +117,7 @@ function changeSound(instrument) {
       instrument.clip.push.apply(instrument.clip,pumpkin.clip);
       instrument.avatar.push.apply(instrument.avatar,pumpkin.avatar);
       instrument.sound = `pumpkin`;
-    }else if (drum.sound === `pumpkin`){
+    }else if (instrument.sound === `pumpkin`){
       instrument.clip.push.apply(instrument.clip,melon.clip);
       instrument.avatar.push.apply(instrument.avatar,melon.avatar);
       instrument.sound = `melon`;
@@ -127,7 +132,7 @@ function changeSound(instrument) {
       instrument.clip.push.apply(instrument.clip,avocado.clip);
       instrument.avatar.push.apply(instrument.avatar,avocado.avatar);
       instrument.sound = `avocado`;
-    }else if (drum.sound === `avocado`){
+    }else if (instrument.sound === `avocado`){
       instrument.clip.push.apply(instrument.clip,banana.clip);
       instrument.avatar.push.apply(instrument.avatar,banana.avatar);
       instrument.sound = `banana`;
@@ -142,7 +147,7 @@ function changeSound(instrument) {
       instrument.clip.push.apply(instrument.clip,bluebry.clip);
       instrument.avatar.push.apply(instrument.avatar,bluebry.avatar);
       instrument.sound = `bluebry`;
-    }else if (drum.sound === `bluebry`){
+    }else if (instrument.sound === `bluebry`){
       instrument.clip.push.apply(instrument.clip,strawbry.clip);
       instrument.avatar.push.apply(instrument.avatar,strawbry.avatar);
       instrument.sound = `strawbry`;
@@ -157,7 +162,7 @@ function changeSound(instrument) {
       instrument.clip.push.apply(instrument.clip,lime.clip);
       instrument.avatar.push.apply(instrument.avatar,lime.avatar);
       instrument.sound = `lime`;
-    }else if (drum.sound === `lime`){
+    }else if (instrument.sound === `lime`){
       instrument.clip.push.apply(instrument.clip,orange.clip);
       instrument.avatar.push.apply(instrument.avatar,orange.avatar);
       instrument.sound = `orange`;

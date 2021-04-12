@@ -14,19 +14,31 @@ function preload() {
   pumpkin.clip[2] = loadSound('assets/sounds/drum_pumpkin3.wav');
 
   //bass
-  bass.clip[0] = loadSound('assets/sounds/bass1.wav');
-  bass.clip[1] = loadSound('assets/sounds/bass2.wav');
-  bass.clip[2] = loadSound('assets/sounds/bass3.wav');
+  banana.clip[0] = loadSound('assets/sounds/bass1.wav');
+  banana.clip[1] = loadSound('assets/sounds/bass2.wav');
+  banana.clip[2] = loadSound('assets/sounds/bass3.wav');
+  //bass
+  avocado.clip[0] = loadSound('assets/sounds/bass_b1.wav');
+  avocado.clip[1] = loadSound('assets/sounds/bass_b2.wav');
+  avocado.clip[2] = loadSound('assets/sounds/bass_b3.wav');
 
   //piano
-  piano.clip[0] = loadSound('assets/sounds/softPiano1.wav');
-  piano.clip[1] = loadSound('assets/sounds/softPiano2.wav');
-  piano.clip[2] = loadSound('assets/sounds/softPiano3.wav');
+  strawbry.clip[0] = loadSound('assets/sounds/softPiano1.wav');
+  strawbry.clip[1] = loadSound('assets/sounds/softPiano2.wav');
+  strawbry.clip[2] = loadSound('assets/sounds/softPiano3.wav');
+
+  bluebry.clip[0] = loadSound('assets/sounds/piano_bluebry1.wav');
+  bluebry.clip[1] = loadSound('assets/sounds/piano_bluebry2.wav');
+  bluebry.clip[2] = loadSound('assets/sounds/piano_bluebry3.wav');
 
   //strings
-  string.clip[0] = loadSound('assets/sounds/string1.wav');
-  string.clip[1] = loadSound('assets/sounds/string2.wav');
-  string.clip[2] = loadSound('assets/sounds/string3.wav');
+  orange.clip[0] = loadSound('assets/sounds/string1.wav');
+  orange.clip[1] = loadSound('assets/sounds/string2.wav');
+  orange.clip[2] = loadSound('assets/sounds/string3.wav');
+  //string - lime
+  lime.clip[0] = loadSound('assets/sounds/string_b1.wav');
+  lime.clip[1] = loadSound('assets/sounds/string_b2.wav');
+  lime.clip[2] = loadSound('assets/sounds/string_b3.wav');
 
 
   //visuals
