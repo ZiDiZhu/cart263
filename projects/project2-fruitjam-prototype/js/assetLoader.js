@@ -73,9 +73,9 @@ function preload() {
   strawbry.avatar[3] = loadImage('assets/gif/berry3.gif');
   //piano blueberry
   bluebry.avatar[0] = loadImage('assets/png/blueberry.png');
-  bluebry.avatar[1] = loadImage('assets/png/blueberry.png');
-  bluebry.avatar[2] = loadImage('assets/png/blueberry.png');
-  bluebry.avatar[3] = loadImage('assets/png/blueberry.png');
+  bluebry.avatar[1] = loadImage('assets/gif/bluebry1.gif');
+  bluebry.avatar[2] = loadImage('assets/gif/bluebry1.gif');
+  bluebry.avatar[3] = loadImage('assets/gif/bluebry1.gif');
 
   //string orange
   orange.avatar[0] = loadImage('assets/png/citrus.png');
@@ -84,9 +84,9 @@ function preload() {
   orange.avatar[3] = loadImage('assets/images/citrus.gif');
   //string lime
   lime.avatar[0] = loadImage('assets/png/lime.png');
-  lime.avatar[1] = loadImage('assets/png/lime.png');
-  lime.avatar[2] = loadImage('assets/png/lime.png');
-  lime.avatar[3] = loadImage('assets/png/lime.png');
+  lime.avatar[1] = loadImage('assets/gif/lime1.gif');
+  lime.avatar[2] = loadImage('assets/gif/lime2.gif');
+  lime.avatar[3] = loadImage('assets/gif/lime3.gif');
 
   //environment assets
   bg_box = loadImage('assets/png/_bg_box.png');

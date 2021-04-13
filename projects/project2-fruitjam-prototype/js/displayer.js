@@ -9,7 +9,6 @@ function updateDisplay() {
   text(`string ` + string.clipnbr + ` playing : ` + string.isPlaying, 700, 100);
 
   image(bg_box,200,150);
-
 }
 
 
