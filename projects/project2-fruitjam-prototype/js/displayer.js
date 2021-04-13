@@ -8,7 +8,7 @@ function updateDisplay() {
   text(`piano ` + piano.clipnbr + ` playing : ` + piano.isPlaying, 500, 100);
   text(`string ` + string.clipnbr + ` playing : ` + string.isPlaying, 700, 100);
 
-  image(bg_box,200,150);
+  image(bgbox,200,150);
 }
 
 

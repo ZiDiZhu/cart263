@@ -105,7 +105,7 @@ let lime = {
 }
 
 //environment assets
-let bg_box;
+let bgbox;
 
 //create buttons
 //and assign functions to buttons

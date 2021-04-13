@@ -89,6 +89,6 @@ function preload() {
   lime.avatar[3] = loadImage('assets/gif/lime3.gif');
 
   //environment assets
-  bg_box = loadImage('assets/png/_bg_box.png');
+  bgbox = loadImage('assets/png/bgbox.png');
 
 }
