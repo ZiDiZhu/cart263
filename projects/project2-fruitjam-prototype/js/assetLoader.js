@@ -1,6 +1,15 @@
 "use strict";
 
-function preload() {
+/**
+Fruit Jam (Demo)_Assets loader
+Zi Di Zhu
+
+Loads in the assets.
+
+*/
+
+//load audio clips, each 2 seconds long
+function loadAudioClips(){
   //sounds
 
   //drums
@@ -39,8 +48,9 @@ function preload() {
   lime.clip[0] = loadSound('assets/sounds/string_b1.wav');
   lime.clip[1] = loadSound('assets/sounds/string_b2.wav');
   lime.clip[2] = loadSound('assets/sounds/string_b3.wav');
+}
 
-
+function loadFruitsAvatars(){
   //visuals
   //1-3 are animated and 0 is still image
 
@@ -87,8 +97,4 @@ function preload() {
   lime.avatar[1] = loadImage('assets/gif/lime1.gif');
   lime.avatar[2] = loadImage('assets/gif/lime2.gif');
   lime.avatar[3] = loadImage('assets/gif/lime3.gif');
-
-  //environment assets
-  bgbox = loadImage('assets/png/bgbox.png');
-
 }

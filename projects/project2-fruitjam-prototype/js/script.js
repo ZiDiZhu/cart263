@@ -1,18 +1,23 @@
 "use strict";
 
 /**
-Fruit Jam (Demo)
+Fruit Jam (Demo)_Main Script
 Zi Di Zhu
 
 A musical toy
 
-commented tofix with things that need to be fixed
-
-also i want to change to not replaying clips from the start to resume playing when switch
-
-TODO: ADD ALL MUSIC CLIPS IN!!!!
+To change: fix the synching issue
 
 */
+
+function preload() {
+
+  loadAudioClips();
+  loadFruitsAvatars();
+
+  //environment assets
+  bgbox = loadImage('assets/png/bgbox.png');
+}
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -93,10 +98,12 @@ function changeClip(instrument) {
 
 //turn instrument on or off
 function toggleOnOff(instrument) {
-  if(instrument.isPlaying)
+  if(instrument.isPlaying){
     instrument.isPlaying = false;
-  else
+  }
+  else{
     instrument.isPlaying = true;
+  }
   playAll();
 }
 
@@ -104,7 +111,6 @@ function toggleOnOff(instrument) {
 function changeSound(instrument) {
 
   stopAll();
-  console.log
 
   instrument.clip.length = [];
   instrument.avatar.length = [];

@@ -1,5 +1,12 @@
 "use strict";
 
+/**
+Fruit Jam (Demo)_Displayer
+Zi Di Zhu
+
+displayCOntrol
+
+*/
 
 function updateDisplay() {
 
