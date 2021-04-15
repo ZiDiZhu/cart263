@@ -15,6 +15,10 @@ function updateDisplay() {
   text(`piano ` + piano.clipnbr + ` playing : ` + piano.isPlaying, 500, 100);
   text(`string ` + string.clipnbr + ` playing : ` + string.isPlaying, 700, 100);
 
+  //another page
+  let introPage = createA("introPage.html","LETS GOOOOOO","_blank");
+  introPage.position(30,30);
+
   image(bgbox,200,150);
 }
 
