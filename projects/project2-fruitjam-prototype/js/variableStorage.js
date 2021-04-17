@@ -117,5 +117,5 @@ let lime = {
 //environment assets
 let bgbox;
 
-//another page
-let introPage = createA("introPage.html","LETS GOOOOOO");
+//instructions
+let keyboardInstruction;

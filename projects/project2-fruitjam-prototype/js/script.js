@@ -17,6 +17,7 @@ function preload() {
 
   //environment assets
   bgbox = loadImage('assets/png/bgbox.png');
+  keyboardInstruction = loadImage('assets/png/instruction.PNG');
 }
 
 function setup() {
@@ -24,6 +25,7 @@ function setup() {
 
   setupButtons();
   setupInstruments();
+  setupSynth();
 }
 
 function draw() {
