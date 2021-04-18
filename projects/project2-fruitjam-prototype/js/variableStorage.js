@@ -8,17 +8,6 @@ declares all the variables
 
 */
 
-//change instrument button
-let button_drum;
-let button_bass;
-let button_piano;
-let button_string;
-//toggleOnOff
-let button_drum_ON;
-let button_bass_ON;
-let button_piano_ON;
-let button_string_ON;
-
 //change sound of instrument
 let button_changesound_drum;
 let button_changesound_bass;
@@ -27,6 +16,7 @@ let button_changesound_string;
 
 let button_stop;
 let button_playall;
+
 
 //drum, piano, string, bass are  'general' instruments
 //fruits are different types of that instrument
@@ -39,7 +29,9 @@ let drum = {
   x:400,
   y:120,
   clipnbr: 0, //clipnumber
-  isPlaying: false
+  isPlaying: false,
+  playbtn: ``,
+  clipbtn:`` //changes the clip
 }
 //drummers
 let melon = {
@@ -60,7 +52,9 @@ let bass = {
   x:300,
   y:150,
   clipnbr: 0,
-  isPlaying: false
+  isPlaying: false,
+  playbtn: ``,
+  clipbtn:``
 }
 //bassists
 let banana = {
@@ -81,7 +75,8 @@ let piano = {
   y:220,
   clipnbr: 0,
   isPlaying: false,
-  volume: 1
+  playbtn: ``,
+  clipbtn:``
 }
 //pianists
 let strawbry = {
@@ -102,7 +97,9 @@ let string = {
   y:250,
   clipnbr: 0,
   isPlaying: false,
-  volume: 1
+  volume: 1,
+  playbtn: ``,
+  clipbtn:``
 }
 //string players
 let orange = {

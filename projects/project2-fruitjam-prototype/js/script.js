@@ -29,7 +29,7 @@ function setup() {
 }
 
 function draw() {
-  background(200);
+  background(20,20,70);
 
   updateDisplay();
 
@@ -37,6 +37,7 @@ function draw() {
   updateAnim(bass);
   updateAnim(piano);
   updateAnim(string);
+
 }
 
 //stop all loops
@@ -54,6 +55,7 @@ function turnAllOff() {
   bass.isPlaying = false;
   piano.isPlaying = false;
   string.isPlaying = false;
+  button_playall.style('filter', 'none');
   stopAll();
 }
 
@@ -63,6 +65,8 @@ function turnAllOn() {
   bass.isPlaying = true;
   piano.isPlaying = true;
   string.isPlaying = true;
+  //highlights play button
+  button_playall.style('filter', `sepia(100%)  saturate(500%)`);
   playAll();
 }
 
@@ -102,9 +106,13 @@ function changeClip(instrument) {
 function toggleOnOff(instrument) {
   if(instrument.isPlaying){
     instrument.isPlaying = false;
+    instrument.playbtn.style('filter', `none`);
+    button_playall.style('filter', `none`);
   }
   else{
     instrument.isPlaying = true;
+    //highlights the playbtn
+    instrument.playbtn.style('filter', `sepia(100%)  saturate(500%)`);
   }
   playAll();
 }

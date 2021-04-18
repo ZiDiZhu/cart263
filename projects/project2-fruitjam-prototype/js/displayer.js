@@ -36,5 +36,6 @@ function updateAnim(instrument) {
     image(instrument.avatar[instrument.clipnbr+1],instrument.x,instrument.y);
   }else{
     image(instrument.avatar[0],instrument.x,instrument.y);
+
   }
 }

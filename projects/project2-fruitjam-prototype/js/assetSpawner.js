@@ -1,60 +1,61 @@
+
 //create buttons
 //and assign functions to buttons
 function setupButtons() {
-  button_stop = createButton('STOP ALL');
-  button_stop.position(600, 50);
+  button_stop = createImg('assets/UISprite/btn_stopAll.png');
+  button_stop.position(600, 40);
   button_stop.mousePressed(turnAllOff);
 
   //tofix
-  button_playall = createButton('PLAY ALL');
-  button_playall.position(300, 50);
+  button_playall = createImg('assets/UISprite/btn_playAll.png');
+  button_playall.position(300, 40);
   button_playall.mousePressed(turnAllOn);
 
-  button_drum = createButton('CHANGE CLIP');
-  button_drum.position(100, 200);
-  button_drum.mousePressed(() => {
+  drum.clipbtn = createImg('assets/UISprite/btn_changeclip.png');
+  drum.clipbtn.position(520, 150);
+  drum.clipbtn.mousePressed(() => {
     changeClip(drum)
   });
 
-  button_drum_ON = createButton('DRUM ON/OFF');
-  button_drum_ON.position(100, 140);
-  button_drum_ON.mousePressed(() => {
+  drum.playbtn = createImg('assets/UISprite/btn_play.png');
+  drum.playbtn.position(520, 110);
+  drum.playbtn.mousePressed(() => {
     toggleOnOff(drum)
   });
 
-  button_bass = createButton('CHANGE CLIP');
-  button_bass.position(300, 200);
-  button_bass.mousePressed(() => {
+  bass.clipbtn = createImg('assets/UISprite/btn_changeclip.png');
+  bass.clipbtn.position(270, 180);
+  bass.clipbtn.mousePressed(() => {
     changeClip(bass)
   });
 
-  button_bass_ON = createButton('BASS ON/OFF');
-  button_bass_ON.position(300, 140);
-  button_bass_ON.mousePressed(() => {
+  bass.playbtn = createImg('assets/UISprite/btn_play.png');
+  bass.playbtn.position(270, 140);
+  bass.playbtn.mousePressed(() => {
     toggleOnOff(bass)
   });
 
-  button_piano = createButton('CHANGE CLIP');
-  button_piano.position(500, 200);
-  button_piano.mousePressed(() => {
+  piano.clipbtn = createImg('assets/UISprite/btn_changeclip.png');
+  piano.clipbtn.position(600, 280);
+  piano.clipbtn.mousePressed(() => {
     changeClip(piano)
   });
 
-  button_piano_ON = createButton('PIANO ON/OFF');
-  button_piano_ON.position(500, 140);
-  button_piano_ON.mousePressed(() => {
+  piano.playbtn = createImg('assets/UISprite/btn_play.png');
+  piano.playbtn.position(550, 280);
+  piano.playbtn.mousePressed(() => {
     toggleOnOff(piano)
   });
 
-  button_string = createButton('CHANGE CLIP');
-  button_string.position(700, 200);
-  button_string.mousePressed(() => {
+  string.clipbtn = createImg('assets/UISprite/btn_changeclip.png');
+  string.clipbtn.position(460, 320);
+  string.clipbtn.mousePressed(() => {
     changeClip(string)
   });
 
-  button_string_ON = createButton('STRING ON/OFF');
-  button_string_ON.position(700, 140);
-  button_string_ON.mousePressed(() => {
+  string.playbtn = createImg('assets/UISprite/btn_play.png');
+  string.playbtn.position(420, 320);
+  string.playbtn.mousePressed(() => {
     toggleOnOff(string)
   });
 

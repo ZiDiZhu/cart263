@@ -51,6 +51,7 @@ function loadAudioClips(){
 }
 
 function loadFruitsAvatars(){
+
   //visuals
   //1-3 are animated and 0 is still image
 
