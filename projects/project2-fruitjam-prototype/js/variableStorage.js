@@ -28,6 +28,9 @@ let drum = {
   avatar: [], //depicted by a melon
   x:400,
   y:120,
+  idleAvatar: ``, //displays the second player
+  idleX:720,
+  idleY:340,
   clipnbr: 0, //clipnumber
   isPlaying: false,
   playbtn: ``,
@@ -35,13 +38,15 @@ let drum = {
 }
 //drummers
 let melon = {
-
   clip :[],
-  avatar: []
+  avatar: [],
+  idle: ``
 }
+
 let pumpkin = {
   clip :[],
-  avatar: []
+  avatar: [],
+  idle: ``
 }
 
 //bass
@@ -51,6 +56,9 @@ let bass = {
   avatar: [],
   x:300,
   y:150,
+  idleAvatar: ``, //displays the second player
+  idleX:660,
+  idleY:440,
   clipnbr: 0,
   isPlaying: false,
   playbtn: ``,
@@ -59,11 +67,13 @@ let bass = {
 //bassists
 let banana = {
   clip :[],
-  avatar: []
+  avatar: [],
+  idle: ``
 }
 let avocado = {
   clip :[],
-  avatar: []
+  avatar: [],
+  idle: ``
 }
 
 //piano
@@ -73,6 +83,9 @@ let piano = {
   avatar:[], //berry
   x:540,
   y:220,
+  idleAvatar: ``, //displays the second player
+  idleX:200,
+  idleY:380,
   clipnbr: 0,
   isPlaying: false,
   playbtn: ``,
@@ -81,11 +94,13 @@ let piano = {
 //pianists
 let strawbry = {
   clip :[],
-  avatar: []
+  avatar: [],
+  idle: ``
 }
 let bluebry = {
   clip :[],
-  avatar: []
+  avatar: [],
+  idle: ``
 }
 
 //string
@@ -94,7 +109,10 @@ let string = {
   clip:[],
   avatar: [],
   x:400,
-  y:250,
+  y:230,
+  idleAvatar: ``, //displays the second player
+  idleX:100,
+  idleY:340,
   clipnbr: 0,
   isPlaying: false,
   volume: 1,
@@ -104,11 +122,13 @@ let string = {
 //string players
 let orange = {
   clip :[],
-  avatar: []
+  avatar: [],
+  idle: ``
 }
 let lime = {
   clip :[],
   avatar: [],
+  idle: ``
 }
 
 //environment assets

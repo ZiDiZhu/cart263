@@ -34,8 +34,11 @@ function updateAnim(instrument) {
 
   if(instrument.isPlaying){
     image(instrument.avatar[instrument.clipnbr+1],instrument.x,instrument.y);
+    instrument.playbtn.style('filter', `sepia(100%)  saturate(500%)`);
   }else{
     image(instrument.avatar[0],instrument.x,instrument.y);
-
+    instrument.playbtn.style('filter', `none`);
   }
+
+  image(instrument.idleAvatar,instrument.idleX,instrument.idleY);
 }

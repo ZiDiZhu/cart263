@@ -60,42 +60,51 @@ function loadFruitsAvatars(){
   melon.avatar[1] = loadImage('assets/gif/melon1.gif');
   melon.avatar[2] = loadImage('assets/gif/melon2.gif');
   melon.avatar[3] = loadImage('assets/gif/melon3.gif');
+  melon.idle = loadImage('assets/gif/idle_melon.gif');
+
   //drum pumpkin
   pumpkin.avatar[0] = loadImage('assets/png/drum_pumpkin.png');
   pumpkin.avatar[1] = loadImage('assets/gif/drum_pumpkin1.gif');
   pumpkin.avatar[2] = loadImage('assets/gif/drum_pumpkin2.gif');
   pumpkin.avatar[3] = loadImage('assets/gif/drum_pumpkin3.gif');
+  pumpkin.idle = loadImage('assets/gif/idle_pumpkin.gif');
 
   //bass banana
   banana.avatar[0] = loadImage('assets/png/banana.png');
   banana.avatar[1] = loadImage('assets/images/banana.gif');
   banana.avatar[2] = loadImage('assets/images/banana.gif');
   banana.avatar[3] = loadImage('assets/images/banana.gif');
+  banana.idle = loadImage('assets/gif/idle_banana.gif');
   //bass avocado
   avocado.avatar[0] = loadImage('assets/png/avocado.png');
   avocado.avatar[1] = loadImage('assets/png/avocado.png');
   avocado.avatar[2] = loadImage('assets/png/avocado.png');
   avocado.avatar[3] = loadImage('assets/png/avocado.png');
+  avocado.idle = loadImage('assets/gif/idle_avocado.gif');
 
   //piano berry
   strawbry.avatar[0] = loadImage('assets/png/berry.png');
   strawbry.avatar[1] = loadImage('assets/gif/berry1.gif');
   strawbry.avatar[2] = loadImage('assets/gif/berry2.gif');
   strawbry.avatar[3] = loadImage('assets/gif/berry3.gif');
+  strawbry.idle = loadImage('assets/gif/idle_strawbry.gif');
   //piano blueberry
   bluebry.avatar[0] = loadImage('assets/png/blueberry.png');
   bluebry.avatar[1] = loadImage('assets/gif/bluebry1.gif');
   bluebry.avatar[2] = loadImage('assets/gif/bluebry1.gif');
   bluebry.avatar[3] = loadImage('assets/gif/bluebry1.gif');
+  bluebry.idle = loadImage('assets/gif/idle_bluebry.gif');
 
   //string orange
   orange.avatar[0] = loadImage('assets/png/citrus.png');
   orange.avatar[1] = loadImage('assets/images/citrus.gif');
   orange.avatar[2] = loadImage('assets/images/citrus.gif');
   orange.avatar[3] = loadImage('assets/images/citrus.gif');
+  orange.idle = loadImage('assets/gif/idle_orange.gif');
   //string lime
   lime.avatar[0] = loadImage('assets/png/lime.png');
   lime.avatar[1] = loadImage('assets/gif/lime1.gif');
   lime.avatar[2] = loadImage('assets/gif/lime2.gif');
   lime.avatar[3] = loadImage('assets/gif/lime3.gif');
+  lime.idle = loadImage('assets/gif/idle_lime.gif');
 }

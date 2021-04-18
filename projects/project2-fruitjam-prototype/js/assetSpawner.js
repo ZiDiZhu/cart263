@@ -36,13 +36,13 @@ function setupButtons() {
   });
 
   piano.clipbtn = createImg('assets/UISprite/btn_changeclip.png');
-  piano.clipbtn.position(600, 280);
+  piano.clipbtn.position(650, 280);
   piano.clipbtn.mousePressed(() => {
     changeClip(piano)
   });
 
   piano.playbtn = createImg('assets/UISprite/btn_play.png');
-  piano.playbtn.position(550, 280);
+  piano.playbtn.position(650, 240);
   piano.playbtn.mousePressed(() => {
     toggleOnOff(piano)
   });
@@ -90,13 +90,17 @@ function setupInstruments() {
 
   drum.clip.push.apply(drum.clip,melon.clip);
   drum.avatar.push.apply(drum.avatar,melon.avatar);
+  drum.idleAvatar = pumpkin.idle;
 
   bass.clip.push.apply(bass.clip,banana.clip);
   bass.avatar.push.apply(bass.avatar,banana.avatar);
+  bass.idleAvatar = avocado.idle;
 
   piano.clip.push.apply(piano.clip,strawbry.clip);
   piano.avatar.push.apply(piano.avatar,strawbry.avatar);
+  piano.idleAvatar = bluebry.idle;
 
   string.clip.push.apply(string.clip,orange.clip);
   string.avatar.push.apply(string.avatar,orange.avatar);
+  string.idleAvatar = lime.idle;
 }

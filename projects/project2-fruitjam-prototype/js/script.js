@@ -32,7 +32,6 @@ function draw() {
   background(20,20,70);
 
   updateDisplay();
-
   updateAnim(drum);
   updateAnim(bass);
   updateAnim(piano);
@@ -83,10 +82,12 @@ function playAll(){
     resetGif(bass);
     bass.clip[bass.clipnbr].loop();
   }
-  if(piano.isPlaying)
+  if(piano.isPlaying){
     piano.clip[piano.clipnbr].loop();
-  if(string.isPlaying)
+  }
+  if(string.isPlaying){
     string.clip[string.clipnbr].loop();
+  }
 
   updateDisplay();
 }
@@ -106,13 +107,10 @@ function changeClip(instrument) {
 function toggleOnOff(instrument) {
   if(instrument.isPlaying){
     instrument.isPlaying = false;
-    instrument.playbtn.style('filter', `none`);
     button_playall.style('filter', `none`);
   }
   else{
     instrument.isPlaying = true;
-    //highlights the playbtn
-    instrument.playbtn.style('filter', `sepia(100%)  saturate(500%)`);
   }
   playAll();
 }
@@ -132,10 +130,12 @@ function changeSound(instrument) {
       //replace clips
       instrument.clip.push.apply(instrument.clip,pumpkin.clip);
       instrument.avatar.push.apply(instrument.avatar,pumpkin.avatar);
+      instrument.idleAvatar = melon.idle;
       instrument.sound = `pumpkin`;
     }else if (instrument.sound === `pumpkin`){
       instrument.clip.push.apply(instrument.clip,melon.clip);
       instrument.avatar.push.apply(instrument.avatar,melon.avatar);
+      instrument.idleAvatar = pumpkin.idle;
       instrument.sound = `melon`;
     }
   }
@@ -147,10 +147,12 @@ function changeSound(instrument) {
       //replace clips
       instrument.clip.push.apply(instrument.clip,avocado.clip);
       instrument.avatar.push.apply(instrument.avatar,avocado.avatar);
+      instrument.idleAvatar = banana.idle;
       instrument.sound = `avocado`;
     }else if (instrument.sound === `avocado`){
       instrument.clip.push.apply(instrument.clip,banana.clip);
       instrument.avatar.push.apply(instrument.avatar,banana.avatar);
+      instrument.idleAvatar = avocado.idle;
       instrument.sound = `banana`;
     }
   }
@@ -162,10 +164,12 @@ function changeSound(instrument) {
       //replace clips
       instrument.clip.push.apply(instrument.clip,bluebry.clip);
       instrument.avatar.push.apply(instrument.avatar,bluebry.avatar);
+      instrument.idleAvatar = strawbry.idle;
       instrument.sound = `bluebry`;
     }else if (instrument.sound === `bluebry`){
       instrument.clip.push.apply(instrument.clip,strawbry.clip);
       instrument.avatar.push.apply(instrument.avatar,strawbry.avatar);
+      instrument.idleAvatar = bluebry.idle;
       instrument.sound = `strawbry`;
     }
   }
@@ -177,10 +181,12 @@ function changeSound(instrument) {
       //replace clips
       instrument.clip.push.apply(instrument.clip,lime.clip);
       instrument.avatar.push.apply(instrument.avatar,lime.avatar);
+      instrument.idleAvatar = orange.idle;
       instrument.sound = `lime`;
     }else if (instrument.sound === `lime`){
       instrument.clip.push.apply(instrument.clip,orange.clip);
       instrument.avatar.push.apply(instrument.avatar,orange.avatar);
+      instrument.idleAvatar = lime.idle;
       instrument.sound = `orange`;
     }
   }
