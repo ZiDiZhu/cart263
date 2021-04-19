@@ -60,27 +60,27 @@ function setupButtons() {
   });
 
   //change drummer
-  button_changesound_drum = createButton('CHANGE DRUMMER');
-  button_changesound_drum.position(100, 440);
-  button_changesound_drum.mousePressed(() => {
+  drum.gobtn = createImg('assets/UISprite/btn_go.png');
+  drum.gobtn.position(drum.idleX+20, drum.idleY-30);
+  drum.gobtn.mousePressed(() => {
     changeSound(drum);
   });
   //change bassist
-  button_changesound_bass = createButton('CHANGE BASSIST');
-  button_changesound_bass.position(300, 440);
-  button_changesound_bass.mousePressed(() => {
+  bass.gobtn = createImg('assets/UISprite/btn_go.png');
+  bass.gobtn.position(bass.idleX+20, bass.idleY-30);
+  bass.gobtn.mousePressed(() => {
     changeSound(bass);
   });
   //change pianist
-  button_changesound_piano = createButton('CHANGE PIANO');
-  button_changesound_piano.position(500, 440);
-  button_changesound_piano.mousePressed(() => {
+  piano.gobtn = createImg('assets/UISprite/btn_go.png');
+  piano.gobtn.position(piano.idleX+20, piano.idleY-20);
+  piano.gobtn.mousePressed(() => {
     changeSound(piano);
   });
-  //change pianist
-  button_changesound_string = createButton('CHANGE STRING');
-  button_changesound_string.position(700, 440);
-  button_changesound_string.mousePressed(() => {
+  //change string
+  string.gobtn = createImg('assets/UISprite/btn_go.png');
+  string.gobtn.position(string.idleX+20, string.idleY-30);
+  string.gobtn.mousePressed(() => {
     changeSound(string);
   });
 }

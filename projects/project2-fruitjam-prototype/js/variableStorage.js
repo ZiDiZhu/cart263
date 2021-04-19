@@ -31,6 +31,7 @@ let drum = {
   idleAvatar: ``, //displays the second player
   idleX:720,
   idleY:340,
+  gobtn:``, //brings the idle player on stage
   clipnbr: 0, //clipnumber
   isPlaying: false,
   playbtn: ``,
@@ -59,6 +60,7 @@ let bass = {
   idleAvatar: ``, //displays the second player
   idleX:660,
   idleY:440,
+  gobtn:``, //brings the idle player on stage
   clipnbr: 0,
   isPlaying: false,
   playbtn: ``,
@@ -86,6 +88,7 @@ let piano = {
   idleAvatar: ``, //displays the second player
   idleX:200,
   idleY:380,
+  gobtn:``, //brings the idle player on stage
   clipnbr: 0,
   isPlaying: false,
   playbtn: ``,
@@ -114,6 +117,7 @@ let string = {
   idleX:100,
   idleY:340,
   clipnbr: 0,
+  gobtn:``, //brings the idle player on stage
   isPlaying: false,
   volume: 1,
   playbtn: ``,
