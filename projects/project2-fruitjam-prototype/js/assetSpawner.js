@@ -2,7 +2,7 @@
 //create buttons
 //and assign functions to buttons
 function setupButtons() {
-  
+
   button_stop = createImg('assets/UISprite/btn_stopAll.png');
   button_stop.position(600, 40);
   button_stop.mousePressed(turnAllOff);
@@ -11,6 +11,10 @@ function setupButtons() {
   button_playall = createImg('assets/UISprite/btn_playAll.png');
   button_playall.position(300, 40);
   button_playall.mousePressed(turnAllOn);
+
+  btn_help = createImg('assets/UISprite/btn_help.png');
+  btn_help.position(900, 30);
+  btn_help.mousePressed(toggleHelp); //shows instructions
 
   drum.clipbtn = createImg('assets/UISprite/btn_changeclip.png');
   drum.clipbtn.position(520, 150);

@@ -33,6 +33,7 @@ function setup() {
 }
 
 function draw() {
+
   background(120,120,170);
 
   updateDisplay();
@@ -63,6 +64,17 @@ function turnAllOff() {
   stopAll();
 }
 
+function toggleHelp(){
+  if(isShowingHelp){
+    btn_help.style('filter', 'none');
+    isShowingHelp = false;
+  }else if(!isShowingHelp){
+    btn_help.style('filter', `sepia(100%) saturate(500%)`);
+    playAll();
+    isShowingHelp = true;
+  }
+}
+
 //switch all instruments.isPlaying to true
 function turnAllOn() {
   drum.isPlaying = true;
@@ -70,7 +82,7 @@ function turnAllOn() {
   piano.isPlaying = true;
   string.isPlaying = true;
   //highlights play button
-  button_playall.style('filter', `sepia(100%)  saturate(500%)`);
+  button_playall.style('filter', `sepia(100%) saturate(500%)`);
   playAll();
 }
 

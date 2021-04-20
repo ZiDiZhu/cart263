@@ -17,6 +17,9 @@ let button_changesound_string;
 let button_stop;
 let button_playall;
 
+//instructions
+let btn_help;
+let isShowingHelp = false; // if displaying help
 
 //drum, piano, string, bass are  'general' instruments
 //fruits are different types of that instrument

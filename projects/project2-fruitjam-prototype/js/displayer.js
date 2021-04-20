@@ -10,20 +10,33 @@ displayCOntrol
 
 function updateDisplay() {
 
+  //background assets
+  image(bgfloor,100,220);
+  image(bgbox,200,150);
+
+  if(piano.isPlaying && bass.isPlaying && drum.isPlaying && string.isPlaying){
+    updateConfetti();
+  }
+
+  if(isShowingHelp){
+    displayHelp();
+  }
+}
+
+//show instructions
+function displayHelp(){
+
+  image(keyboardInstruction,900,100);
+
+  //console
   text(`drum ` + drum.clipnbr + ` playing : ` + drum.isPlaying, 100, 100);
   text(`bass ` + bass.clipnbr + ` playing : ` + bass.isPlaying, 300, 100);
   text(`piano ` + piano.clipnbr + ` playing : ` + piano.isPlaying, 500, 100);
   text(`string ` + string.clipnbr + ` playing : ` + string.isPlaying, 700, 100);
 
-  //background assets
-  image(bgfloor,100,220);
-  image(bgbox,200,150);
-  image(keyboardInstruction,800,500);
-
-  if(piano.isPlaying && bass.isPlaying && drum.isPlaying && string.isPlaying){
-    updateConfetti();
-  }
 }
+
+
 
 function makeButtonVisible(){
   let firstRoomButton = document.getElementById(first-room-button);
@@ -47,4 +60,9 @@ function updateAnim(instrument) {
   }
 
   image(instrument.idleAvatar,instrument.idleX,instrument.idleY);
+}
+
+//prevents things falling out of places when resizing
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
