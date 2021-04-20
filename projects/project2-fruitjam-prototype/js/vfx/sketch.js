@@ -5,7 +5,7 @@ let confettiColor = [], confetti = [];
 let confettiPlaying = false;
 
 function startConfetti() {
-	confettiColor = [color('#00aeef'), color('#ec008c'), color('#72c8b6'), color('#DFFF00')];
+	confettiColor = [color(`#00aeef`), color(`#ec008c`), color(`#72c8b6`), color(`#DFFF00`)];
   for (let i = 0; i < 100; i++) {
     confetti[i] = new Confetti(random(0, width), random(-height, 0), random(-1, 1));
   }

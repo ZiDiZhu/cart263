@@ -29,6 +29,8 @@ function setup() {
   setupInstruments();
   setupSynth();
 
+  setupMic();
+
   //startConfetti();
 }
 
@@ -43,6 +45,8 @@ function draw() {
   updateAnim(string);
 
   displayConfetti();
+
+  displayLyrics();
 }
 
 //stop all loops
