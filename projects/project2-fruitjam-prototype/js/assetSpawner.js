@@ -2,6 +2,7 @@
 //create buttons
 //and assign functions to buttons
 function setupButtons() {
+  
   button_stop = createImg('assets/UISprite/btn_stopAll.png');
   button_stop.position(600, 40);
   button_stop.mousePressed(turnAllOff);
@@ -63,25 +64,25 @@ function setupButtons() {
   drum.gobtn = createImg('assets/UISprite/btn_go.png');
   drum.gobtn.position(drum.idleX+20, drum.idleY-30);
   drum.gobtn.mousePressed(() => {
-    changeSound(drum);
+    changeSound(drum)
   });
   //change bassist
   bass.gobtn = createImg('assets/UISprite/btn_go.png');
   bass.gobtn.position(bass.idleX+20, bass.idleY-30);
   bass.gobtn.mousePressed(() => {
-    changeSound(bass);
+    changeSound(bass)
   });
   //change pianist
   piano.gobtn = createImg('assets/UISprite/btn_go.png');
   piano.gobtn.position(piano.idleX+20, piano.idleY-20);
   piano.gobtn.mousePressed(() => {
-    changeSound(piano);
+    changeSound(piano)
   });
   //change string
   string.gobtn = createImg('assets/UISprite/btn_go.png');
   string.gobtn.position(string.idleX+20, string.idleY-30);
   string.gobtn.mousePressed(() => {
-    changeSound(string);
+    changeSound(string)
   });
 }
 

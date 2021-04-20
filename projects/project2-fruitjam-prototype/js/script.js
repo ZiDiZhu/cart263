@@ -17,19 +17,23 @@ function preload() {
 
   //environment assets
   bgbox = loadImage('assets/png/bgbox.png');
+  bgfloor = loadImage('assets/png/bgcheckeredfloor.png');
   keyboardInstruction = loadImage('assets/png/instruction.PNG');
 }
 
 function setup() {
+
   createCanvas(windowWidth, windowHeight);
 
   setupButtons();
   setupInstruments();
   setupSynth();
+
+  //startConfetti();
 }
 
 function draw() {
-  background(20,20,70);
+  background(120,120,170);
 
   updateDisplay();
   updateAnim(drum);
@@ -37,6 +41,7 @@ function draw() {
   updateAnim(piano);
   updateAnim(string);
 
+  displayConfetti();
 }
 
 //stop all loops
@@ -89,7 +94,12 @@ function playAll(){
     string.clip[string.clipnbr].loop();
   }
 
-  updateDisplay();
+  if(piano.isPlaying && bass.isPlaying && drum.isPlaying && string.isPlaying && confettiPlaying ===false){
+    startConfetti();
+    confettiPlaying = true; //prevent retrigger
+  }
+
+  //updateDisplay();
 }
 
 //change the clip of the instrument

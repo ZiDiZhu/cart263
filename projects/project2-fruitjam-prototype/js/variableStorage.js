@@ -43,7 +43,6 @@ let melon = {
   avatar: [],
   idle: ``
 }
-
 let pumpkin = {
   clip :[],
   avatar: [],
@@ -137,6 +136,7 @@ let lime = {
 
 //environment assets
 let bgbox;
+let bgfloor;
 
 //instructions
 let keyboardInstruction;

@@ -15,8 +15,14 @@ function updateDisplay() {
   text(`piano ` + piano.clipnbr + ` playing : ` + piano.isPlaying, 500, 100);
   text(`string ` + string.clipnbr + ` playing : ` + string.isPlaying, 700, 100);
 
+  //background assets
+  image(bgfloor,100,220);
   image(bgbox,200,150);
-  image(keyboardInstruction,100,550);
+  image(keyboardInstruction,800,500);
+
+  if(piano.isPlaying && bass.isPlaying && drum.isPlaying && string.isPlaying){
+    updateConfetti();
+  }
 }
 
 function makeButtonVisible(){
