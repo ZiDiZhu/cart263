@@ -77,9 +77,9 @@ function loadFruitsAvatars(){
   banana.idle = loadImage('assets/gif/idle_banana.gif');
   //bass avocado
   avocado.avatar[0] = loadImage('assets/png/avocado.png');
-  avocado.avatar[1] = loadImage('assets/png/avocado.png');
-  avocado.avatar[2] = loadImage('assets/png/avocado.png');
-  avocado.avatar[3] = loadImage('assets/png/avocado.png');
+  avocado.avatar[1] = loadImage('assets/gif/avocado1.gif');
+  avocado.avatar[2] = loadImage('assets/gif/avocado2.gif');
+  avocado.avatar[3] = loadImage('assets/gif/avocado2.gif');
   avocado.idle = loadImage('assets/gif/idle_avocado.gif');
 
   //piano berry
