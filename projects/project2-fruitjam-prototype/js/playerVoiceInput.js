@@ -5,6 +5,8 @@
 
 let word;
 let speech;
+let speechtimer; //stop displaying lyrics after awhile
+let displayingLyrics = false;
 let wordX = 400; //position to lyrics
 let wordY = 600; //position to lyrics
 let wordColor = {
@@ -29,7 +31,12 @@ function setupMic(){
 }
 
 function detectSinging(word){
+  speechtimer = 0;
+  move = 0;
   speech = word;
+  let wordX = 400; //position to lyrics
+  let wordY = 600;
+  displayingLyrics = true;
   console.log(speech);
 
   wordX = random(300,600);
@@ -43,13 +50,23 @@ function displayLyrics(){
 
   rot = rot + 0.3*rotChange;
 
+  speechtimer++;
+  if(speechtimer % 200 == 0){
+    displayingLyrics = false;
+  }
+
   if (frameCount % 30 == 0){
     rotChange = rotChange * -1;
   }
 
-  move = move + 1*moveChange;
   if (frameCount % 120 == 0){
-    moveChange = moveChange * -1;
+    moveChange = moveChange * -1;//bring it back
+  }
+
+  if (displayingLyrics){
+    move = move + 1*moveChange;
+  }else{
+    move = move + 8;
   }
 
   push();
@@ -59,10 +76,10 @@ function displayLyrics(){
   translate(wordX-move,wordY-move);
   rotate( radians(rot) );
   fill(wordColor.r,wordColor.g,wordColor.b);
-  text(speech,0,0);
+  text(speech,0,0,400,200);
   blendMode(ADD);
-  rotate( radians(rot*1.02) );
+  rotate( radians(rot*1.01) );
   fill(wordColor.r,255-wordColor.g,255-wordColor.b);
-  text(speech,2,2);
+  text(speech,2,2,400,200);
   pop();
 }
