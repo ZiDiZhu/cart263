@@ -27,6 +27,25 @@ function keyPressed(){
   }else if (keyCode === 75){
     playMusic(`c5`);
   }
+
+  shortCuts();
+}
+
+//keyboard shortcuts
+function shortCuts(){
+  turnAllOff();
+  if (keyCode === 49){
+    drum.isPlaying = true;
+    console.log(`aaa`);
+  }else if (keyCode ===50){
+    bass.isPlaying = true;
+  }else if (keyCode ===51){
+    piano.isPlaying = true;
+  }else if (keyCode ===52){
+    string.isPlaying = true;
+  }
+  console.log(`aaa`);
+  playAll();
 }
 
 function playMusic(note){
