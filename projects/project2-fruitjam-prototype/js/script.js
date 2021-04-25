@@ -47,25 +47,8 @@ function draw() {
   displayConfetti();
 
   displayLyrics();
-
 }
 
-//keyboard shortcuts
-function shortCuts(){
-  turnAllOff();
-  if (keyCode === 49){
-    drum.isPlaying = true;
-    console.log(`aaa`);
-  }else if (keyCode ===50){
-    bass.isPlaying = true;
-  }else if (keyCode ===51){
-    piano.isPlaying = true;
-  }else if (keyCode ===52){
-    string.isPlaying = true;
-  }
-  console.log(`aaa`);
-  playAll();
-}
 
 //stop all loops
 function stopAll() {

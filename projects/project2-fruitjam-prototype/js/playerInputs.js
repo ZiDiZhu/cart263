@@ -9,7 +9,7 @@ function setupSynth(){
 
 function keyPressed(){
 
-//A - K on keyboard
+  //A - K on keyboard
   if(keyCode === 65){
     playMusic(`c4`);
   }else if (keyCode === 83){
@@ -33,19 +33,24 @@ function keyPressed(){
 
 //keyboard shortcuts
 function shortCuts(){
-  turnAllOff();
+  
   if (keyCode === 49){
+    turnAllOff();
     drum.isPlaying = true;
-    console.log(`aaa`);
+    playAll();
   }else if (keyCode ===50){
+    turnAllOff();
     bass.isPlaying = true;
+    playAll();
   }else if (keyCode ===51){
+    turnAllOff();
     piano.isPlaying = true;
+    playAll();
   }else if (keyCode ===52){
+    turnAllOff();
     string.isPlaying = true;
+    playAll();
   }
-  console.log(`aaa`);
-  playAll();
 }
 
 function playMusic(note){
