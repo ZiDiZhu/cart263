@@ -38,6 +38,7 @@ function draw() {
 
   background(120,120,170);
 
+  //update animation and art assets
   updateDisplay();
   updateAnim(drum);
   updateAnim(bass);
@@ -69,6 +70,7 @@ function turnAllOff() {
   stopAll();
 }
 
+//display help menu on/off
 function toggleHelp(){
   if(isShowingHelp){
     btn_help.style('filter', 'none');

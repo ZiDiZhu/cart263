@@ -5,7 +5,7 @@
 
 let word;
 let speech;
-let speechtimer; //stop displaying lyrics after awhile
+let speechtimer; //timer for lyrics to fly off screen
 let displayingLyrics = false;
 let wordX = 400; //position to lyrics
 let wordY = 600; //position to lyrics
@@ -30,6 +30,7 @@ function setupMic(){
   }
 }
 
+//detects when the user says a sentence
 function detectSinging(word){
   speechtimer = 0;
   move = 0;

@@ -7,9 +7,9 @@ function setupSynth(){
   userStartAudio();
 }
 
-function keyPressed(){
 
-  //A - K on keyboard
+function keyPressed(){
+  //A - K on keyboard which plays C4 -C5 on synth
   if(keyCode === 65){
     playMusic(`c4`);
   }else if (keyCode === 83){
@@ -31,9 +31,9 @@ function keyPressed(){
   shortCuts();
 }
 
-//keyboard shortcuts
+//keyboard shortcuts to play each instrument solo
 function shortCuts(){
-  
+
   if (keyCode === 49){
     turnAllOff();
     drum.isPlaying = true;

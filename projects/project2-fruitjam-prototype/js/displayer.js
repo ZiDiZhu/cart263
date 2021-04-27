@@ -4,7 +4,7 @@
 Fruit Jam (Demo)_Displayer
 Zi Di Zhu
 
-displayCOntrol
+display visuals
 
 */
 
@@ -14,6 +14,7 @@ function updateDisplay() {
   image(bgfloor,100,220);
   image(bgbox,200,150);
 
+  //display confetti if every instrument is playing
   if(piano.isPlaying && bass.isPlaying && drum.isPlaying && string.isPlaying){
     updateConfetti();
   }
@@ -28,19 +29,6 @@ function displayHelp(){
 
   image(keyboardInstruction,900,100);
 
-  //console
-  text(`drum ` + drum.clipnbr + ` playing : ` + drum.isPlaying, 100, 100);
-  text(`bass ` + bass.clipnbr + ` playing : ` + bass.isPlaying, 300, 100);
-  text(`piano ` + piano.clipnbr + ` playing : ` + piano.isPlaying, 500, 100);
-  text(`string ` + string.clipnbr + ` playing : ` + string.isPlaying, 700, 100);
-
-}
-
-
-
-function makeButtonVisible(){
-  let firstRoomButton = document.getElementById(first-room-button);
-    firstRoomButton.style.visibility = visible;
 }
 
 

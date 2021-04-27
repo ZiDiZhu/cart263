@@ -50,6 +50,7 @@ function loadAudioClips(){
   lime.clip[2] = loadSound('assets/sounds/string_b3.wav');
 }
 
+//loads the gif and pngs 
 function loadFruitsAvatars(){
 
   //visuals
